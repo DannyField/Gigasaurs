@@ -1,0 +1,63 @@
+<%= form_with model: @gig, local: true do |form| %>
+<div>
+    <%= form.label 'GIG TITLE' %>
+    <%= form.text_field :title %>
+</div>
+
+<div>
+    <%= form.label 'VENUE' %>
+    <%= form.text_field :venue %>
+</div>
+
+<div>
+    <%= form.label 'LOCATION:' %>
+    <%= form.text_field :location %>
+</div>
+
+<div>
+    <%= form.label 'DATE OF GIG' %>
+    <%= form.date_field :date %>
+</div>
+
+<div>
+    <%= form.label 'STARTING TIME' %>
+    <%= form.time_field :start_time %>
+</div>
+
+<div>
+    <%= form.label 'FINISH TIME' %>
+    <%= form.time_field :end_time %>
+</div>
+
+<div>
+    <%= form.label 'GIG DETAILS' %>
+    <%= form.text_field :gig_details %>
+</div>
+
+<div>
+    <%= form.label 'SUPPORT' %>
+    <%= form.text_field :support %>
+</div>
+
+<div>
+    <%= form.label 'COST' %>
+    <%= form.number_field :cost %>
+</div>
+
+<div>
+    <%= form.label 'TIX AVAILABLE' %>
+    <%= form.number_field :tickets_available %>
+</div>
+
+<div>
+    <%= form.label 'UPLOAD GIG POSTER' %>
+    <%= form.text_field :picture_upload, accept: 'image/png, image/jpeg, image/jpg' %>
+</div>
+
+<div>
+<%= form.submit %>
+</div>
+<% end %>
+
+
+

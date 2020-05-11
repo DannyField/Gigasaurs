@@ -1,0 +1,36 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<h1>Welcome to Gigasaurs</h1>
+<p>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</p>
+
+<p>Please sign in and get access to the hottest bands in the local area</p>
+
+<%# anyone should be able to see a listing but limited information %>
+<%= link_to 'Click Here to Enter and latest local gigs         |', gigs_path %>
+
+<%# should send you to the sign in page %>
+
+
+<%# <% if user_signed_in? %> %>
+    <%# <%= link_to "Sign out          |", destroy_user_session_path, method: :delete  %> %>
+<%# <% else  %> %>
+    <%# <%= link_to 'Sign In          |', new_user_session_path %> %>
+<%# <% end %> %>
+    
+<%# <% if user_signed_in? %>     %>
+    <%# <%= link_to 'Create a new gig', new_gigs_path %>  %>
+<%# <% else %>    %>
+    <%# <%= link_to 'Create a new gig', new_user_session_path %> %>
+<%# <% end  %> %>
+
+<br><br><br><br>
+<br><br><br><br>
+
+TODO
+
+Nav bar at the top so you can always link back
+
+<Footer>
+information here. Possibly user info as well, links back to home page, and direct messages etc
+</Footer>
