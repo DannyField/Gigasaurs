@@ -27,19 +27,35 @@ puts "Removing old entries"
 #     )
 #     puts "New user: #{u.name} created"
 
+puts "Creating gigs"
+
 5.times do
-    j = Gig.create(
-        title: Faker::Commerce.department,
-        position_needed: "Full Stack Dev",
-        description: "Hi all, we are looking for a full stack dev that knows how to code in Ruby, with some JS",
-        looking_for: "For a full stack dev that knows Ruby on Rails",
-        contact: Faker::FunnyName.two_word_name,
-        desposit: 10000,
-        due_date: nil,
-        location: "Yarra Valley area",
-        user_id: 1
+    g = Gig.create(
+        title: Faker::Music::RockBand.name,
+        venue: 'The Espy',
+        location: '11 The Esplanade, St Kilda, VIC 3138',
+        date: nil,
+        start_time: nil,
+        end_time: nil,
+        gig_details: 'We join the stage at 8pm, rocking hard and kicking ass!',
+        support: Faker::Music::RockBand.name,
+        tickets_available: 100,
+        cost: 4000,
+        picture_upload: nil
     )
-    puts "#{j.title} created by #{j.contact}!"
+    puts "#{g.title} gig created and the support band is #{g.support}"
 end
 
-end
+# title:
+# venue:
+# location:
+# date: nil,
+# start_time: nil,
+# end_time: nil,
+# gig_details: 'We join the stage at 8pm, rocking hard and kicking ass!',
+# support: 'bands B',
+# tickets_available: 100,
+# cost: 4000,
+# picture_upload: nil
+
+# puts "#{g.title} gig created by #{j.contact}!"
