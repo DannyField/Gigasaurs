@@ -1,0 +1,25 @@
+<%= form_with model: @user, local: true do |form| %>
+<div>
+    <%= form.label 'Your Name :' %>
+    <%= form.text_field :name %>
+</div>
+
+<div>
+    <%= form.label 'Tells Us About Yourself :' %>
+    <%= form.text_field :about %>
+</div>
+
+<div>
+    <%= form.label 'Where Are You Based? :' %>
+    <%= form.text_field :location %>
+</div>
+
+<div>
+    <%= form.label 'Upload A Nice Photo - Something your grandma would be proud of' %>
+    <%= form.text_field :profile_picture, accept: 'image/png, image/jpeg, image/jpg' %>
+</div>
+
+<div>
+<%= form.submit %>
+</div>
+<% end %>

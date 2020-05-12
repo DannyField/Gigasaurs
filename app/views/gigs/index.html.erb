@@ -1,4 +1,4 @@
-<h1>ALL JOBS</h1>
+<h1>ALL UPCOMING GIGS</h1>
 
 <div>
 <% @gigs.each do |gig| %>
@@ -6,12 +6,12 @@
     <p>Held at the awesome <%= gig.venue %> </p>
     <p>With support by : <%= gig.support %> </p>
     <p>Date : <%= gig.date %> </p>
+    <p>________________________________________________</p>
 <% end %>
 </div>
 
 <h2>ADD A GIG</h2>
 <%= link_to 'Add A Gig', new_gig_path  %>
-
 
 <%# the job in the job_path = the show page %>
 <%# the link_to is just an anchor tag %>

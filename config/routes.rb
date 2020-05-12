@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :gigs
   resources :bands
+  resources :users
 
 end

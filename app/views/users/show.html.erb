@@ -1,0 +1,28 @@
+to show their own profile or others if they click on it
+
+<%# this will print each single job listing %>
+
+<h1>USER PROFILE PAGE</h1>
+
+<h1><%= @user.name %></h1>
+<h3>About me : <%= @user.about %></h3>
+<h3>My location :</h3>
+<p><%= @user.location %></p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Delete', band_path(@user), method: :delete, data: { confirm: "Really delete #{@user.name}?"} %>
+<%= link_to 'Back', gigs_path %>
+
+deleting a user may also delete the band page... or maybe not
+
+
+////////////////////////////////////////////////////////////
+<h2>ARE YOU IN A BAND?</h2>
+<%= link_to 'Create a band profile', new_band_path  %>
+
+or if already then sign in to the band page 
+
+or create another band if the muso is in many other bands
+
+<%# if signed in can create a gig %>
