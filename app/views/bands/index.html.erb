@@ -8,3 +8,6 @@ Be good to have the full list and a search list here. Should add later the local
 <% @bands.each do |band| %>
 <p><%= link_to band.name, band_path(band)  %></p>
 <% end %>
+
+<h2>ADD A NEW BAND</h2>
+<%= link_to 'Add A Band', new_band_path  %>
