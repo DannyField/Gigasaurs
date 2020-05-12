@@ -1,2 +1,11 @@
 class Gig < ApplicationRecord
+    validates :title, presence: true
+    validates :venue, presence: true
+    validates :location, presence: true
+    validates :gig_details, presence: true
+    validates :support, presence: true
+
+    validates :tickets_available, presence: true, numericality: { greater_than: 0 }
+    validates :cost, presence: true, numericality: { greater_than: 0 }
+
 end
