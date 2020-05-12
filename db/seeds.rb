@@ -27,6 +27,7 @@ puts "Removing old entries"
 #     )
 #     puts "New user: #{u.name} created"
 
+puts "///////////////////////////////////////////////////"
 puts "Creating gigs"
 
 5.times do
@@ -46,6 +47,9 @@ puts "Creating gigs"
     puts "#{g.title} gig created and the support band is #{g.support}"
 end
 
+puts "//////////////////////////////////////////////////"
+puts "Creating Bands"
+
 11.times do
     b = Band.create(
         name: Faker::Music::RockBand.name,
@@ -56,6 +60,43 @@ end
     puts "Band #{b.name} profile page was created! Now go create some gigs"
 end
 
+puts "//////////////////////////////////////////////////"
+puts "Creating Users"
+
+7.times do
+    u = User.create(
+        name: Faker::FunnyName.two_word_name,
+        profile_photo: nil,
+        about: 'Just a simple music lover! Up the Irons!',
+        location: 'Melbourne',
+        admin: false
+    )
+    puts "#{u.name} was created. Welcome #{u.name}"
+end
+
+puts "//////////////////////////////////////////////////"
+puts "Creating Admin"
+
+1.times do
+    u = User.create(
+        name: 'Admin',
+        profile_photo: nil,
+        about: 'The admin of the site',
+        location: 'Behind you!',
+        admin: true
+    )
+    puts "The #{u.name} role was created. All hail the #{u.name}"
+end
+
+
+
+
+# USER
+# :name
+# :profile_photo
+# :about
+# :location
+# :admin
 
 # BAND
 # :name

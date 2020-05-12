@@ -1,0 +1,7 @@
+<h1>THE USERS</h1>
+
+Ideally I wouldn't be able to see all the users. This would be hidden. But for testing purposes
+
+<% @users.each do |user| %>
+    <p><%= link_to user.name, user_path(user) %></p>
+    <% end %>
