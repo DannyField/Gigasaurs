@@ -27,6 +27,19 @@ puts "Removing old entries"
 #     )
 #     puts "New user: #{u.name} created"
 
+puts "//////////////////////////////////////////////////"
+puts "Creating Bands"
+
+11.times do
+    b = Band.create(
+        name: Faker::Music::RockBand.name,
+        profile_picture: nil,
+        about: 'We are a kick ass band that has played over 27 shows, since starting out.',
+        website: nil
+    )
+    puts "Band #{b.name} profile page was created! Now go create some gigs"
+end
+
 puts "///////////////////////////////////////////////////"
 puts "Creating gigs"
 
@@ -42,23 +55,12 @@ puts "Creating gigs"
         support: Faker::Music::RockBand.name,
         tickets_available: 100,
         cost: 4000,
-        picture_upload: nil
+        picture_upload: nil,
+        band_id: 1
     )
     puts "#{g.title} gig created and the support band is #{g.support}"
 end
 
-puts "//////////////////////////////////////////////////"
-puts "Creating Bands"
-
-11.times do
-    b = Band.create(
-        name: Faker::Music::RockBand.name,
-        profile_picture: nil,
-        about: 'We are a kick ass band that has played over 27 shows, since starting out.',
-        website: nil
-    )
-    puts "Band #{b.name} profile page was created! Now go create some gigs"
-end
 
 puts "//////////////////////////////////////////////////"
 puts "Creating Users"
