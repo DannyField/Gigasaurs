@@ -46,6 +46,24 @@ puts "Creating gigs"
     puts "#{g.title} gig created and the support band is #{g.support}"
 end
 
+11.times do
+    b = Band.create(
+        name: Faker::Music::RockBand.name,
+        profile_picture: nil,
+        about: 'We are a kick ass band that has played over 27 shows, since starting out.',
+        website: nil
+    )
+    puts "Band #{b.name} profile page was created! Now go create some gigs"
+end
+
+
+# BAND
+# :name
+# :profile_picture
+# :about
+# :website
+
+# GIG
 # title:
 # venue:
 # location:

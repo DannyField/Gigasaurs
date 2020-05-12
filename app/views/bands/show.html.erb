@@ -1,0 +1,22 @@
+<%# this will print each single job listing %>
+
+<h1>BAND LISTING</h1>
+
+<h1><%= @band.name %></h1>
+<h3>About us : <%= @band.about %></h3>
+<h3>Check us out at :</h3>
+<p><%= @band.website %></p>
+
+<%# add the other details here too %>
+
+<%# <p>Posted By :<%= @gig.band_id %> 
+
+<%= link_to 'Edit', edit_band_path(@band) %>
+<%= link_to 'Delete', band_path(@band), method: :delete, data: { confirm: "Really delete #{@band.name}?"} %>
+<%= link_to 'Back', bands_path %>
+
+
+<h2>ADD A GIG</h2>
+<%= link_to 'Add A Gig', new_gig_path  %>
+
+<%# if signed in can create a gig %>
