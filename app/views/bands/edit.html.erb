@@ -1,0 +1,11 @@
+Should only be able to edit their own band page
+
+<% if flash[:success] %>
+<p><%= flash[:success] %></p>
+<% end %>
+
+<h1> Edit your band page <h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', band_path(@band) %>
