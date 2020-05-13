@@ -10,12 +10,21 @@ to show their own profile or others if they click on it
 <h3>My location :</h3>
 <p><%= @user.location %></p>
 
+<p>_____________________________________________________</p>
+<h2>HEY YOU! ROCKING IN THAT BAND!</h2>
+<h3>You rock hard in...</h3>
+<% @user.bands.each do |band| %>
+<p><%= band.name%></p>
+<% end %>
+<p>_____________________________________________________</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Delete', band_path(@user), method: :delete, data: { confirm: "Really delete #{@user.name}?"} %>
 <%= link_to 'Back', gigs_path %>
 
 deleting a user may also delete the band page... or maybe not
+
 
 
 ////////////////////////////////////////////////////////////
