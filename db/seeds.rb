@@ -56,7 +56,7 @@ puts "Creating gigs"
         tickets_available: 100,
         cost: 4000,
         picture_upload: nil,
-        band_id: 1
+        band_id: bands[rand(0.9)].id
     )
     puts "#{g.title} gig created and the support band is #{g.support}"
 end

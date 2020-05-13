@@ -8,6 +8,20 @@
 <h3>Check us out at :</h3>
 <p><%= @band.website %></p>
 
+<p>_____________________________________________________</p>
+<p>Band members</p>
+trying to reach inside and grab the user entries
+
+So each user that is in the band. Would need a loop
+
+<h3>BAND MEMBERS</h3>
+<% @band.users.each do |user| %>
+<p><%= user.name%></p>
+<p><%= user.location%></p>
+<% end %>
+<p>_____________________________________________________</p>
+
+
 <%# add the other details here too %>
 
 <%# <p>Posted By :<%= @gig.band_id %> 
