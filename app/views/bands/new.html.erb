@@ -1,5 +1,7 @@
 <%= render 'shared/navbar' %>
 
+<div class="band-new">
+
 <% if flash[:success] %>
 <p><%= flash[:success] %></p>
 <% end %>
@@ -13,3 +15,5 @@
 
 <h2>ADD A NEW BAND</h2>
 <%= link_to 'Add A Band', new_band_path  %>
+
+</div>

@@ -1,6 +1,8 @@
 <%= render 'shared/navbar' %>
 <%# this will print each single job listing %>
 
+<div class="gig-show">
+
 <h1>GIG LISTING</h1>
 
 <h1><%= @gig.title %></h1>
@@ -15,3 +17,5 @@
 <%= link_to 'Edit', edit_gig_path(@gig) %>
 <%= link_to 'Delete', gig_path(@gig), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
 <%= link_to 'Back', gigs_path %>
+
+</div>

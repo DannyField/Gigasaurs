@@ -51,3 +51,9 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{
     background: green;
 }
+
+.signup, .login {
+        // sets the main page across - will make it go down -so margin top
+        margin-left: 16rem; 
+        padding: 10rem;
+    }

@@ -1,6 +1,8 @@
 <%= render 'shared/navbar' %>
 <%# this will print each single job listing %>
 
+<div class="show-band">
+
 <h1>BAND LISTING</h1>
 
 <h1><%= @band.name %></h1>
@@ -34,3 +36,5 @@ THIS IS WORKING
 <%= link_to 'Add A Gig', new_gig_path  %>
 
 <%# if signed in can create a gig %>
+
+</div>

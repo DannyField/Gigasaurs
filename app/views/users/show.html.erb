@@ -1,4 +1,6 @@
 <%= render 'shared/navbar' %>
+
+<div class="user-show">
 to show their own profile or others if they click on it
 
 <%# this will print each single job listing %>
@@ -9,12 +11,12 @@ to show their own profile or others if they click on it
 <h3>About me : <%= @user.about %></h3>
 <h3>My location :</h3>
 <p><%= @user.location %></p>
-
+<br><br>
 <p>_____________________________________________________</p>
 <h2>HEY YOU! ROCKING IN THAT BAND!</h2>
 <h3>You rock hard in...</h3>
 <% @user.bands.each do |band| %>
-<p><%= band.name%></p>
+<h1><%= band.name%></h1>
 <% end %>
 <p>_____________________________________________________</p>
 
@@ -28,7 +30,7 @@ to show their own profile or others if they click on it
 deleting a user may also delete the band page... or maybe not
 
 
-
+<br><br>
 ////////////////////////////////////////////////////////////
 <h2>ARE YOU IN A BAND?</h2>
 <%= link_to 'Create a band profile', new_band_path  %>
@@ -38,3 +40,10 @@ or if already then sign in to the band page
 or create another band if the muso is in many other bands
 
 <%# if signed in can create a gig %>
+<br><br>
+<h1>TICKETS YOU HAVE PURCHASED</h1>
+Upcoming events
+
+
+
+</div>

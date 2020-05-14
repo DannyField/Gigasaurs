@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// body {
-//     // background-image: url('bg.png');
-//     color: white
-// }
+body {
+    background-image: url('bg.png');
+    color: var(--light);
+}
 
 .welcome {
     // sets the main page across - will make it go down -so margin top
