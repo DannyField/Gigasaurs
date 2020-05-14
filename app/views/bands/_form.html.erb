@@ -19,7 +19,26 @@
     <%= form.file_field :profile_picture, accept: 'image/png, image/jpeg, image/jpg' %>
 </div>
 
+A user must create a band
+That user must then add people to the band via email! 
+
+Incase there are people with the same name! So an email would be the best way.
+Or a secret number created that shouldn't be shared with others. Like a membership number
+
+
+
 <div>
 <%= form.submit %>
 </div>
+<% end %>
+
+
+<%= form_for @band do |f| %>
+<%= f.label 'Add band members to the group :' %>
+    <%= f.fields_for :band_users do |fea| %>
+        <%= fea.fields_for :user do |fa| %>
+            <%= fa.text_field :name %>
+            <% end %>
+        <% end %>
+    <%= f.submit %>
 <% end %>

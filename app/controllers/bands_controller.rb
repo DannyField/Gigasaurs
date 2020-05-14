@@ -47,8 +47,10 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     end
 
     def band_params
-        params.require(:band).permit(:name, :profile_picture, :about, :website)
+        params.require(:band).permit(:name, :profile_picture, :about, :website, user_ids: [])
     end
+
+
 
 end
 
