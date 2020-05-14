@@ -1,12 +1,16 @@
 <%= render 'shared/navbar' %>
 
+<h1>IDEALLY I MIGHT NOT SHOW THE BAND LIST ONLY THE GIG LIST</h1>
+
+
 <h1>BANDS</h1>
 
-Be good to have the full list and a search list here. Should add later the local of the band, and the venues that they have played at
+Be good to have the full list and a search list here. 
+Should add later the local of the band, and the venues that they have played at
 
 
 <% @bands.each do |band| %>
-<p><%= link_to band.name, band_path(band)  %></p>
+<p><%= link_to band.name, band_path(band) %></p>
 <% end %>
 
 <h2>ADD A NEW BAND</h2>
