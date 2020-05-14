@@ -1,3 +1,9 @@
 // Place all the styles related to the Gigs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.gig-index, .gig-edit, .gig-show, .gig-new {
+    // sets the main page across - will make it go down -so margin top
+    margin-left: 16rem; 
+    padding: 4rem;
+}

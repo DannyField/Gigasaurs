@@ -1,5 +1,7 @@
 <%= render 'shared/navbar' %>
 
+<div class="band-edit">
+
 Should only be able to edit their own band page
 
 <% if flash[:success] %>
@@ -11,3 +13,5 @@ Should only be able to edit their own band page
 <%= render 'form' %>
 
 <%= link_to 'Back', band_path(@band) %>
+
+</div>
