@@ -1,23 +1,27 @@
 <%= render 'shared/navbar' %>
 
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<%# <%= class="bg" ; image_tag "bg", alt: "background-page" %>
+<br><br>
+
+<h1>NOT THE FINAL LOOK</h1>
+
 
 <h1>Welcome to Gigasaurs</h1>
 <p>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</p>
 
 <p>Please sign in and get access to the hottest bands in the local area</p>
 
-<br><br><br><br>
+
+<br><br><br>
 <%# anyone should be able to see a listing but limited information %>
 <%= link_to 'Click Here to Enter and latest local gigs', gigs_path %>
 
-<br><br><br><br>
+<br><br><br>
 <%# should send you to the sign in page %>
 
 <%= link_to 'Click Here to Enter see the latest bands signed up|', bands_path %>
 
-<br><br><br><br>
+<br><br><br>
 <%= link_to 'Click Here to Enter see the Users signed up|', users_path %>
 
 <%# <% if user_signed_in? %> 
