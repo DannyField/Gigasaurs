@@ -57,3 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "faker", "~> 2.11"
 
 gem 'rails_admin', '~> 2.0.2'
+gem "devise", "~> 4.7"
