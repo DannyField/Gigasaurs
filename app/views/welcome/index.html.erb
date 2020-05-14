@@ -12,6 +12,10 @@
 <p>Please sign in and get access to the hottest bands in the local area</p>
 
 
+<div class="sign-up-button">
+<%= button_to "Sign up", new_user_registration_path, method: :get  %>
+</div>
+
 <br><br><br>
 <%# anyone should be able to see a listing but limited information %>
 <%= link_to 'Click Here to Enter and latest local gigs', gigs_path %>

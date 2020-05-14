@@ -6,3 +6,17 @@ body {
     background-image: url('bg.png');
     color: white
 }
+
+.sign-up-button {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up-button form input {
+    height: 50px;
+    border: 1px solid green;
+    background-color: lightgreen;
+    font-size: 30px;
+    color: black;
+}
+

@@ -1,2 +1,14 @@
-<h1>GIGASAURS <%= link_to 'GIGS', gigs_path  %> <%= link_to 'BANDS', bands_path  %> <%= link_to 'USERS', users_path  %></h1>
+<h1>GIGASAURS 
+<%= link_to 'GIGS', gigs_path  %> 
+<%= link_to 'BANDS', bands_path  %> 
+<%= link_to 'USERS', users_path  %>
+<%= link_to 'HOME', root_path  %>
+
+<% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+<% end %>
+
+</h1>
 <p>_________________________________________________________________________________________________</p>

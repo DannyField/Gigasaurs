@@ -19,6 +19,8 @@ to show their own profile or others if they click on it
 <p>_____________________________________________________</p>
 
 
+
+
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Delete', band_path(@user), method: :delete, data: { confirm: "Really delete #{@user.name}?"} %>
 <%= link_to 'Back', gigs_path %>

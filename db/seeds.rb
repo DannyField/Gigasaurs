@@ -27,6 +27,7 @@ puts "Removing old entries"
 #     )
 #     puts "New user: #{u.name} created"
 
+
 puts "//////////////////////////////////////////////////"
 puts "Creating Bands"
 
@@ -69,12 +70,15 @@ puts "Creating Users"
     u = User.create(
         name: Faker::FunnyName.two_word_name,
         profile_photo: nil,
-        about: 'Just a simple music lover! Up the Irons!',
+        about: 'The seed can only do one user at a time',
         location: 'Melbourne',
+        password: '123456',
+        email: "funny@gmail.com",
         admin: false
     )
     puts "#{u.name} was created. Welcome #{u.name}"
 end
+
 
 puts "//////////////////////////////////////////////////"
 puts "Creating Admin"
@@ -85,12 +89,12 @@ puts "Creating Admin"
         profile_photo: nil,
         about: 'The admin of the site',
         location: 'Behind you!',
-        admin: true
+        admin: true,
+        password: 'password',
+        email: 'admin@gigasaurs.com'
     )
     puts "The #{u.name} role was created. All hail the #{u.name}"
 end
-
-
 
 
 # USER

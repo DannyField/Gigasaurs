@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
 before_action :find_band ,only: [:show, :edit, :update, :destroy]    
+# before_action :set_band_gig, only: [:edit, :update, :destroy]
 
     def index
         @bands = Band.all 
@@ -14,6 +15,7 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     end
 
     def create
+        # authenticate_user!
         @band = Band.new(band_params)
         @band.save
 
@@ -47,10 +49,16 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     end
 
     def band_params
-        params.require(:band).permit(:name, :profile_picture, :about, :website, user_ids: [])
+        params.require(:band).permit(:name, :profile_picture, :about, :website)
     end
 
-
+    # def set_band_gig
+    #     id = paramas[:id]
+    #     @gig = current.user.gigs.find_by_id(id)
+    #     if @gig == nil
+    #         redirect_to_gigs_path
+    #     end
+    # end
 
 end
 
