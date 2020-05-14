@@ -1,11 +1,53 @@
-// @import "base/globals";
-// @import "styles/shared/nav";
+@import "base/globals";
+@import "/shared/navbar";
 
-
-body {
-    background: grey
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-a {
-    color: white;
+:root {
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --primary: #dddddd;
+    --dark: #333333;
+    --light: #ffffff;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.9);
+}
+
+body {
+    color: black;
+    background-color: var(--primary);
+    margin: 0;
+    padding: 0;
+}
+
+// This allows the full page as previously these notice and alert were sitting at the top
+.notice {
+    margin: 0;
+    padding: 0;
+    display:none;
+}
+
+.alert {
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+// This makes the side scroll bar nice and sexy. Makes it green too
+
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: green;
 }
