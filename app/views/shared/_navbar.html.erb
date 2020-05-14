@@ -1,2 +1,45 @@
-<h1>GIGASAURS <%= link_to 'GIGS', gigs_path  %> <%= link_to 'BANDS', bands_path  %> <%= link_to 'USERS', users_path  %></h1>
-<p>_________________________________________________________________________________________________</p>
+<div class="navbar">
+    <div class="navbar-nav">
+        <ul>
+            <li class="nav-item"
+                ><%= link_to 'GIGASAURS', root_path  %> 
+                <span class="link-text">HELLO</span>
+                </li>
+
+            <li class="nav-item">
+                <%= link_to 'GIGS', gigs_path  %>
+                <span class="link-text">MY</span>
+                </li>
+
+            <li class="nav-item">
+                <%= link_to 'BANDS', bands_path  %> 
+                <span class="link-text">SPECIAL</span>
+                </li>
+
+            <li class="nav-item">
+                <%= link_to 'USERS', users_path  %>
+                <span class="link-text">FRIEND</span>
+                </li>
+
+            <li class="nav-item">
+            <% if user_signed_in? %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            <% else %>
+                <%= link_to "Sign in", new_user_session_path %>
+            <% end %>
+            <span class="link-text">LOGIN</span><li>
+        </ul>
+    </div>
+</div>
+
+
+            <%# <li><%= link_to 'bands', bands_path  </li>  %>
+            <%# <li><%= link_to 'USERS', users_path  </li>  %>
+            <%# <li><%= link_to 'HOME', root_path <li>  %>
+            <%# <li> %>
+            <%# <% if user_signed_in? %> 
+                <%# <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+            <%# <% else %>
+                <%# <%= link_to "Sign in", new_user_session_path %> 
+            <%# <% end<li>  %>
+            

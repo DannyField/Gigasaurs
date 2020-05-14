@@ -1,5 +1,7 @@
 class BandsController < ApplicationController
-before_action :find_band ,only: [:show, :edit, :update, :destroy]    
+before_action :find_band ,only: [:show, :edit, :update, :destroy]
+# accepts_nested_attributes_for :user
+# before_action :set_band_gig, only: [:edit, :update, :destroy]
 
     def index
         @bands = Band.all 
@@ -14,6 +16,7 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     end
 
     def create
+        # authenticate_user!
         @band = Band.new(band_params)
         @band.save
 
@@ -29,7 +32,6 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     def update
         # @band = Band.find(params[:id])
         @band.update(band_params)
-
         redirect_to @band
     end
 
@@ -40,17 +42,27 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     end
 
 
-    private
+private
 
     def find_band
         @band = Band.find(params[:id])
     end
 
     def band_params
-        params.require(:band).permit(:name, :profile_picture, :about, :website, user_ids: [])
+        params.require(:band).permit(:name, :profile_picture, :about, :website, user_attributes: [:id,:name, :email])
+        # params.require(:model).permit(:fields)
+        # nested
+        # params.require(:person) .permit(:name, :age, user_attributes: [:id, :name])
+
     end
 
-
+    # def set_band_gig
+    #     id = paramas[:id]
+    #     @gig = current.user.gigs.find_by_id(id)
+    #     if @gig == nil
+    #         redirect_to_gigs_path
+    #     end
+    # end
 
 end
 

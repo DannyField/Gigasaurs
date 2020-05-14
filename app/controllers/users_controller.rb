@@ -11,6 +11,7 @@ before_action :find_user ,only: [:show, :edit, :update, :destroy]
     
         def new
             @user = User.new
+            
         end
     
         def create
@@ -50,6 +51,9 @@ before_action :find_user ,only: [:show, :edit, :update, :destroy]
             params.require(:user).permit(:name, :profile_photo, :about, :location)
         end
     
+        # def user_params
+        #     params.require(:user).permit(band_ids: [])
+        # end
 end
     
     
