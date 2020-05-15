@@ -12,10 +12,29 @@
 
 <%# add the other details here too %>
 
-<%# <p>Posted By :<%= @gig.band_id %> 
+<p>Posted By : <%= @gig.band.name %>
 
-<%= link_to 'Edit', edit_gig_path(@gig) %>
-<%= link_to 'Delete', gig_path(@gig), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
+BUY TICKETS 
+Amount - at the moment it's set to tickets, so I need to maybe create a cart and take away tickets
+<br><br>
+<%= form_with model: @gig, local: true do |form| %>
+<div>
+    <%= form.label 'HOW MANY TICKETS' %>
+    <%= form.text_field :ticket_available %>
+    <div>
+<%= form.submit %>
+</div>
+<% end %>
+</div>
+
+Add to cart
+
+
+<% if user_signed_in? %>
+    <%= link_to 'Edit', edit_gig_path(@gig) %>
+    <%= link_to 'Delete', gig_path(@gig), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
+<% end %>
+
 <%= link_to 'Back', gigs_path %>
 
 </div>

@@ -73,7 +73,7 @@ puts "Creating Users"
         about: 'The seed can only do one user at a time',
         location: 'Melbourne',
         password: '123456',
-        email: "funny@gmail.com",
+        email: "test@gmail.com",
         admin: false
     )
     puts "#{u.name} was created. Welcome #{u.name}"
