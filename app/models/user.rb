@@ -8,4 +8,14 @@ class User < ApplicationRecord
     has_many :bands, through: :band_users
 
     has_one_attached :profile_photo
+
+  def admin?
+    if self.email.ends_with('@gigasaurs.com')
+      #admin@gigasaurs.com
+      if self.email.split('@').first == 'admin'
+        return true
+      end
+    end
+    false
+  end
 end

@@ -27,8 +27,15 @@ THIS IS WORKING
 
 <%# <p>Posted By :<%= @gig.band_id %> 
 
-<%= link_to 'Edit', edit_band_path(@band) %>
-<%= link_to 'Delete', band_path(@band), method: :delete, data: { confirm: "Really delete #{@band.name}?"} %>
+
+<% if can? :edit, @band  %>
+<%= link_to 'Edit', edit_band_path(@band.id) %>
+<% end %>
+
+<% if can? :destroy, @band  %>
+<%= link_to 'Delete', band_path(@band.id), method: :delete, data: { confirm: "Really delete #{@band.name}?"} %>
+<% end %>
+
 <%= link_to 'Back', bands_path %>
 
 

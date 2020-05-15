@@ -31,8 +31,12 @@ Add to cart
 
 
 <% if user_signed_in? %>
-    <%= link_to 'Edit', edit_gig_path(@gig) %>
-    <%= link_to 'Delete', gig_path(@gig), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
+    <% if can? :edit, @gig  %>
+        <%= link_to 'Edit', edit_gig_path(@gig.id) %>
+    <% end %>
+    <% if can? :destroy, @gig  %>    
+        <%= link_to 'Delete', gig_path(@gig.id), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
+    <% end %>
 <% end %>
 
 <%= link_to 'Back', gigs_path %>
