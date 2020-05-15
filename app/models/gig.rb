@@ -10,4 +10,6 @@ belongs_to :band
     validates :tickets_available, presence: true, numericality: { greater_than: 0 }
     validates :cost, presence: true, numericality: { greater_than: 0 }
 
+    has_one_attached :picture_upload
+
 end

@@ -7,4 +7,5 @@ class Band < ApplicationRecord
     has_many :users, through: :band_users
     has_many :gigs
 
+    has_one_attached :profile_picture
 end

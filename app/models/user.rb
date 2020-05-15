@@ -6,4 +6,6 @@ class User < ApplicationRecord
     
     has_many :band_users
     has_many :bands, through: :band_users
+
+    has_one_attached :profile_photo
 end
