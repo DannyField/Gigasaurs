@@ -23,10 +23,8 @@ A user must create a band
 That user must then add people to the band via email! 
 
 <div>
-<%= form.fields_for :user do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-<% end %>
+    <%= form.label :band_member %>
+    <%= form.text_field :band_member %>
 </div>
 
 Incase there are people with the same name! So an email would be the best way.
