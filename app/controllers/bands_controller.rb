@@ -18,6 +18,11 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     def create
         # authenticate_user!
         @band = Band.new(band_params)
+        band_member = User.where(name: params[:band][:band_member])
+
+        unless band_member.empty?
+            @band.band_users.create(user_id: band_member.first.id)
+        end
         @band.save
 
         redirect_to @band
@@ -27,12 +32,21 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
 
     def edit
         # @band = Band.find(params[:id])
+        
     end
 
     def update
+        band_member = User.where(name: params[:band][:band_member])
+
+        unless band_member.empty?
+            @band.band_users.create(user_id: band_member.first.id)
+        end
+        
         # @band = Band.find(params[:id])
         @band.update(band_params)
         redirect_to @band
+
+
     end
 
     def destroy
@@ -49,7 +63,7 @@ private
     end
 
     def band_params
-        params.require(:band).permit(:name, :profile_picture, :about, :website, user_attributes: [:id,:name, :email])
+        params.require(:band).permit(:name, :profile_picture, :about, :website)
         # params.require(:model).permit(:fields)
         # nested
         # params.require(:person) .permit(:name, :age, user_attributes: [:id, :name])
