@@ -23,6 +23,7 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
         unless band_member.empty?
             @band.band_users.create(user_id: band_member.first.id)
         end
+        
         @band.save
 
         redirect_to @band

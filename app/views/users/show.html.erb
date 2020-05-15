@@ -20,8 +20,15 @@ to show their own profile or others if they click on it
 <% end %>
 <p>_____________________________________________________</p>
 
+<br><br>
+<h2>Nice Photo</h2>
+
+<% if @user.profile_photo.attached? %>
+    <%= image_tag @user.profile_photo  %>
+<% end %>
 
 
+<p>_____________________________________________________</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Delete', band_path(@user), method: :delete, data: { confirm: "Really delete #{@user.name}?"} %>
