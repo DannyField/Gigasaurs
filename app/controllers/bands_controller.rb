@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
 before_action :find_band ,only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!
 # accepts_nested_attributes_for :user
 # before_action :set_band_gig, only: [:edit, :update, :destroy]
 
@@ -12,11 +13,12 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
     end
 
     def new
+        authenticate_user!
         @band = Band.new
     end
 
     def create
-        # authenticate_user!
+        authenticate_user!
         @band = Band.new(band_params)
         band_member = User.where(name: params[:band][:band_member])
 

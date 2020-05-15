@@ -1,5 +1,6 @@
 class GigsController < ApplicationController
 before_action :find_gig ,only: [:show, :edit, :update, :destroy]    
+before_action :authenticate_user! , except: [:show, :index]
 
     def index  
         @gigs = Gig.all
