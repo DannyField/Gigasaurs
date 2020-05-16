@@ -3,7 +3,7 @@ before_action :find_band ,only: [:show, :edit, :update, :destroy]
 # load_and_authorize_resource
 before_action :authenticate_user!
 # before_action :set_band_gig, only: [:edit, :update, :destroy]
-before_action :set_user_band, only: [:edit, :update, :destroy]
+# before_action :set_user_band, only: [:edit, :update, :destroy]
 
     def index
         authenticate_user!
@@ -29,6 +29,7 @@ before_action :set_user_band, only: [:edit, :update, :destroy]
             @band.band_users.create(user_id: band_member.first.id)
         end
         
+
         @band.save
         flash[:success] = "You have created a new band"
         redirect_to @band
@@ -65,7 +66,7 @@ private
     end
 
     def band_params
-        params.require(:band).permit(:name, :profile_picture, :about, :website)
+        params.require(:band).permit(:name, :profile_picture, :about, :website, :user_id)
     end
 
     # def set_band_gig

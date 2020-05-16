@@ -4,13 +4,14 @@ class User < ApplicationRecord
     devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
     
+    has_many :gigs
+    has_many :bands
+    has_one_attached :profile_photo
+
     has_many :band_users
     has_many :bands, through: :band_users
 
     # Not sure about this line, as I originally set it up as bands can create gigs only
-    has_many :gigs
-    
-    has_one_attached :profile_photo
 
 #   def admin?
 #     if self.email.ends_with('@gigasaurs.com')
