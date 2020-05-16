@@ -4,20 +4,38 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    alias_action :create, :read, :update, :destroy, to: :crud
-  can :read, Gig
+  #   user ||= User.new
 
-    if user.present?
-      can :create, Band, user_id: user.id
-      can :update, Band, user_id: user.id
-      can :destroy, Band, user_id: user.id
-    end
+
+  #   alias_action :create, :read, :update, :destroy, to: :crud
+  #   #A guest
+  # can :read, Gig
+
+  # if !user
+  #   user = User.new
+  # end
+  
+  # A user
+  # if user.present?
+  #   can [:index, :show], Gig
+  #   can [:edit, :create, :update, :destroy], Gig, user_id: user_id
+  #   can [:show], Band
+  #   can [:edit, :create, :update, :destroy], Band, user: id
+  #   can [:show, :edit, :create, :update, :destroy], User, user: id
+  # end
+    #   can :create, Band, user_id: user.id
+    #   can :update, Band, user_id: user.id
+    #   can :destroy, Band, user_id: user.id
+    #   can :create, Gig, user_id: user.id
+    #   can :update, Gig, user_id: user.id
+    #   can :destroy, Gig, user_id: user.id
+    # end
 
     #Admin
-    if user.admin
-      can :manage, :all
-      can :destroy, User
-    end
+    # if user.admin
+    #   can :manage, :all
+    #   can :destroy, User
+    # end
 
     # Define abilities for the passed in user here. For example:
     #

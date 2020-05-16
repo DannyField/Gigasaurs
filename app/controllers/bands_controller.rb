@@ -1,11 +1,12 @@
 class BandsController < ApplicationController
 before_action :find_band ,only: [:show, :edit, :update, :destroy]
-load_and_authorize_resource
+# load_and_authorize_resource
 before_action :authenticate_user!
-# accepts_nested_attributes_for :user
 # before_action :set_band_gig, only: [:edit, :update, :destroy]
+before_action :set_user_band, only: [:edit, :update, :destroy]
 
     def index
+        authenticate_user!
         @bands = Band.all 
     end
 
@@ -20,6 +21,7 @@ before_action :authenticate_user!
 
     def create
         authenticate_user!
+        # Ed helped with this code. So I know it works
         @band = Band.new(band_params)
         band_member = User.where(name: params[:band][:band_member])
 
@@ -28,10 +30,8 @@ before_action :authenticate_user!
         end
         
         @band.save
-
+        flash[:success] = "You have created a new band"
         redirect_to @band
-
-        # I will most likely remove this as it should only be a user that can create a band
     end
 
     def edit
@@ -49,8 +49,6 @@ before_action :authenticate_user!
         # @band = Band.find(params[:id])
         @band.update(band_params)
         redirect_to @band
-
-
     end
 
     def destroy
@@ -68,10 +66,6 @@ private
 
     def band_params
         params.require(:band).permit(:name, :profile_picture, :about, :website)
-        # params.require(:model).permit(:fields)
-        # nested
-        # params.require(:person) .permit(:name, :age, user_attributes: [:id, :name])
-
     end
 
     # def set_band_gig
@@ -81,6 +75,17 @@ private
     #         redirect_to_gigs_path
     #     end
     # end
+
+# I need to get in my head, that a user would create a band, just like a listing!!! Just that a user doesn't sell a band
+    def set_user_band
+        id = params[:id]
+        @band = current_user.bands.find_by_id(id)
+
+        if @band == nil
+            flash[:unauthorized] = "Not authorized to do that!"
+            redirect_to bands_path
+        end
+    end
 
 end
 

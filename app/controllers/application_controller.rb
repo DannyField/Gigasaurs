@@ -3,5 +3,4 @@ class ApplicationController < ActionController::Base
         flash[:error] = "Not authorized to perform that action"
         redirect_to root_path
     end
-
 end

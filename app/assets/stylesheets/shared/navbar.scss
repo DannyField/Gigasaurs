@@ -57,6 +57,11 @@ li, a {
     background-color: rgba(0,136,169,0.6);
 }
 
+.button a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
 
   .logo {
     /* This helps center and align in middle of the box */
@@ -64,21 +69,6 @@ li, a {
     justify-content: left;
     padding: 10px;
     align-items: center;
-  }
-  
-  .links-top {
-    display: flex;
-    // justify-content: space-evenly;
-    // align-items: center;
-    // text-align: center;
-    // justify-content: center;
-    // grid-row: 2 / 3;
-    // grid-column: 2 / 3;
-  
-    border: 1px solid black;
-    /* color: bisque; */
-    /* background-color: #d7c892; */
-    background-color: #202244;
   }
   
   .nav__links a {  

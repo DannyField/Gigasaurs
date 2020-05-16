@@ -1,7 +1,7 @@
 class GigsController < ApplicationController
 before_action :find_gig ,only: [:show, :edit, :update, :destroy]
-load_and_authorize_resource    
-before_action :authenticate_user! , except: [:show, :index]
+# load_and_authorize_resource    
+before_action :authenticate_user! ,except: [:show, :index]
 
     def index  
         @gigs = Gig.all
@@ -16,10 +16,21 @@ before_action :authenticate_user! , except: [:show, :index]
     end
 
     def create
-        @gig = Gig.new(gig_params)
-        @gig.save
+        # @gig = Gig.new(gig_params)
+        # @gig.user_id = current_user_id
+        @gig = current_user.gigs.create(gig_params)
+        if @gig.errors.any?
+            render :new
+        else
+            @gig.save
+            flash[:success] = "You have created a new gig post! Rock on!"
+            redirect_to @gig
+        end
 
-        redirect_to @gig
+        # @gig = Gig.new(gig_params)
+        # @gig.save
+
+        # redirect_to @gig
     end
 
     def edit
@@ -35,7 +46,6 @@ before_action :authenticate_user! , except: [:show, :index]
 
     def destroy
         @gig.destroy
-
         redirect_to gigs_path
     end
 

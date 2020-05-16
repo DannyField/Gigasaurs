@@ -5,15 +5,18 @@
                 <li><%= link_to 'BANDS', bands_path  %></li> 
                 <li><%= link_to 'USERS', users_path  %></li> 
                 </ul>
-                <ul class="button"><li><% if user_signed_in? %>
+                <ul class="button"><li><% 
+                if user_signed_in? %>
                     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
                 <% else %>
                     <%= link_to "Sign in", new_user_session_path %>
                 <% end %></li>
         <ul>
-
 </div>
 
+<% if user_signed_in? %>
+        <%= link_to "Hello! #{current_user.name}, ID:#{current_user.id}", root_path%>
+      <% end %> 
 
 <div class="sidebar">
     <div class="sidebar-nav">

@@ -6,30 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-puts "Removing old entries"
-# Job.delete.all
-
-# puts "Creating new user"
-
-# 1.times do
-#     u = User.create(
-#         name: 'Admin',
-#         headline: 'I am the Admin',
-#         current_job: 'Admin role',
-#         about: 'Currently a full stack junior dev building this website',
-#         skill: 'Cinematography, and Full Stack Dev',
-#         location: 'Yarra Valley',
-#         website: 'www.dannyfield.com',
-#         admin: true,
-#         password: 'password',
-#         email: 'admin@mcn.com'
-#     )
-#     puts "New user: #{u.name} created"
-
+# require_relative "data/listings"
+# this was able to retrieve another seed file that had the listings of all the snakes
 
 puts "//////////////////////////////////////////////////"
 puts "Creating Bands"
+
+random_num = rand(1..11)
 
 11.times do
     b = Band.create(
@@ -55,9 +38,9 @@ puts "Creating gigs"
         gig_details: 'We join the stage at 8pm, rocking hard and kicking ass!',
         support: Faker::Music::RockBand.name,
         tickets_available: 100,
-        cost: 4000,
+        cost: 5000,
         picture_upload: nil,
-        band_id: 1
+        band_id: rand(1..11)
     )
     puts "#{g.title} gig created and the support band is #{g.support}"
 end
@@ -70,10 +53,10 @@ puts "Creating Users"
     u = User.create(
         name: Faker::FunnyName.two_word_name,
         profile_photo: nil,
-        about: 'The seed can only do one user at a time',
+        about: 'A random number was used to create the email',
         location: 'Melbourne',
         password: '123456',
-        email: "test@gmail.com",
+        email: "test#{random_num}@gmail.com",
         admin: false
     )
     puts "#{u.name} was created. Welcome #{u.name}"
