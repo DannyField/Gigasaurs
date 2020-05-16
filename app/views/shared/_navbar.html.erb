@@ -1,24 +1,22 @@
-<div class="horz-nav">
-
-    <div class="mainlogo">
-        <li class="logo"><%= link_to 'GIGASAURS', root_path  %></li>
-    </div>
-        <ul class="top-item">
+<div class="nav">
+        <ul><li class="logo"><%= link_to 'GIGASAURS LOGO', root_path  %></li></ul>
+            <ul class="nav__links">
                 <li><%= link_to 'GIGS', gigs_path  %></li> 
                 <li><%= link_to 'BANDS', bands_path  %></li> 
                 <li><%= link_to 'USERS', users_path  %></li> 
-                <li><% if user_signed_in? %>
+                </ul>
+                <ul class="button"><li><% if user_signed_in? %>
                     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
                 <% else %>
                     <%= link_to "Sign in", new_user_session_path %>
-                <% end %></li> 
-                <li><%= link_to 'X', root_path %><i class="fas fa-bars"></i></li> 
+                <% end %></li>
         <ul>
 
 </div>
 
-<div class="navbar">
-    <div class="navbar-nav">
+
+<div class="sidebar">
+    <div class="sidebar-nav">
         <ul>
             <li class="nav-item"
                 ><%= link_to 'GIGASAURS', root_path  %>

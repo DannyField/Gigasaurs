@@ -1,82 +1,93 @@
-// Top nav bar
-.horz-nav{
-    height: 6rem;
-    box-shadow: var(--shadow);
-    padding: 0px;
-    margin: 0px;
-    background: rgb(57, 57, 65);
-    color: chartreuse;
-    width: 100vw;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,300;1,500&display=swap');
+
+
+/* to change the font colors go to nav-effects.css */
+
+li, a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: seagreen;
+    font-size: 16px;
+    text-decoration: none;
 }
 
-.top-item{
+
+.nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    padding: 30px 10%;
+    width: 100vw;
+    height: 6rem;
+    background: linear-gradient(0deg, #090e17 0%, #0b0318 100%);
 }
 
-.top-item ul{
+.logo {
+        cursor: pointer;
+    }
+
+.nav__links{
     list-style: none;
-    padding: 0;
-    background: #444444;
 }
 
-.top-item ul li a{
-    color: #dddddd;
-    padding: .8rem 1rem;
-    display: block;
-    text-decoration: none;
+.nav__links li{
+    display: inline-block;
+    padding: 0px 2-px;
 }
 
-/* Basic styling */
-// oddly this is changing the color on everything! All anchor tags
-a {
-    color: rgb(65, 136, 218);
-    text-decoration: none;
+.nav__links li a {
+    transition: all 0.3 ease 0s;
 }
-a:hover {
-    text-decoration: underline;
+
+.nav__links li a:hover {
+    color: #0088a9
 }
 
 .button {
-    border-bottom: 1px red solid;
-    border: 3px rebeccapurple solid;
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgba(0,136,169,0.6);
 }
 
 
+  .logo {
+    /* This helps center and align in middle of the box */
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .links-top {
+    display: flex;
+    // justify-content: space-evenly;
+    // align-items: center;
+    // text-align: center;
+    // justify-content: center;
+    // grid-row: 2 / 3;
+    // grid-column: 2 / 3;
+  
+    border: 1px solid black;
+    /* color: bisque; */
+    /* background-color: #d7c892; */
+    background-color: #202244;
+  }
+  
+  .nav__links a {  
+    text-decoration: none;
+  }
+  
+// Side bar element
 
-
-
-
-
-
-
-
-
-// original Danny edit
-
-.nav-item ul {
-    display: grid;
-    grid-gap: 250px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-// .nav-item a {
-//     background: var (--primary);
-//     display: block;
-//     text-decoration: none;
-//     padding: 0.8rem;
-//     text-align: center;
-//     color: var (--dark);
-//     text-transform: uppercase;
-//     font-size: 1.1rem;
-//     box-shadow: var(--shadow);
-// }
-
-.navbar {
+.sidebar {
     width: 5rem;
     height: 100vh;
     position: fixed;
@@ -84,7 +95,7 @@ a:hover {
     transition: 200ms ease;
 }
 
-.navbar-nav {
+.sidebar-nav {
     list-style: none;
     padding: 50px;
     margin: 5px;
@@ -121,10 +132,10 @@ a:hover {
 }
 
 // this will make the nav bar slide outwards
-.navbar:hover {
+.sidebar:hover {
     width: 16rem;
 }
 
-.navbar:hover .link-text {
+.sidebar:hover .link-text {
     display: block;
 }
