@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,300;1,500&display=swap');
 
 
-/* to change the font colors go to nav-effects.css */
-
 li, a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -10,7 +8,6 @@ li, a {
     font-size: 16px;
     text-decoration: none;
 }
-
 
 .nav {
     display: flex;
@@ -22,9 +19,22 @@ li, a {
     background: linear-gradient(0deg, #090e17 0%, #0b0318 100%);
 }
 
+.logo a {
+    font-size: 3rem;
+}
+
+.logo a:hover {
+    color: darkgrey;
+}
+
 .logo {
-        cursor: pointer;
-    }
+    cursor: pointer;
+    /* This helps center and align in middle of the box */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  
 
 .nav__links{
     list-style: none;
@@ -62,23 +72,14 @@ li, a {
     list-style: none;
     text-decoration: none;
 }
-
-  .logo {
-    /* This helps center and align in middle of the box */
-    display: flex;
-    justify-content: left;
-    padding: 10px;
-    align-items: center;
-  }
-  
-  .nav__links a {  
+.nav__links a {  
     text-decoration: none;
   }
   
 // Side bar element
 
 .sidebar {
-    width: 5rem;
+    width: 7rem;
     height: 100vh;
     position: fixed;
     background: var(--bg-secondary);

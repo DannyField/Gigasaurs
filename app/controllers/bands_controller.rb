@@ -20,20 +20,33 @@ before_action :authenticate_user!
     end
 
     def create
-        authenticate_user!
-        # Ed helped with this code. So I know it works
-        @band = Band.new(band_params)
-        band_member = User.where(name: params[:band][:band_member])
-
-        unless band_member.empty?
-            @band.band_users.create(user_id: band_member.first.id)
+        # authenticate_user!
+        @band = current_user.band.create(band_params)
+        if @band.errors.any?
+            render :new
+        else
+            flash[:success] = "You have created a new band"
+            redirect_to @band
         end
+    end
+
+        
+        
+        
+        # # Ed helped with this code. So I know it works
+        # @band = Band.new(band_params)
+
+        # band_member = User.where(name: params[:band][:band_member])
+
+        # unless band_member.empty?
+        #     @band.band_users.create(user_id: band_member.first.id)
+        # end
         
 
-        @band.save
-        flash[:success] = "You have created a new band"
-        redirect_to @band
-    end
+        # @band.save
+        # flash[:success] = "You have created a new band"
+        # redirect_to @band
+        # end
 
     def edit
         # @band = Band.find(params[:id])
@@ -78,16 +91,14 @@ private
     # end
 
 # I need to get in my head, that a user would create a band, just like a listing!!! Just that a user doesn't sell a band
-    def set_user_band
-        id = params[:id]
-        @band = current_user.bands.find_by_id(id)
+    # def set_user_band
+    #     id = params[:id]
+    #     @band = current_user.bands.find_by_id(id)
 
-        if @band == nil
-            flash[:unauthorized] = "Not authorized to do that!"
-            redirect_to bands_path
-        end
-    end
+    #     if @band == nil
+    #         flash[:unauthorized] = "Not authorized to do that!"
+    #         redirect_to bands_path
+    #     end
+    # end
 
 end
-
-

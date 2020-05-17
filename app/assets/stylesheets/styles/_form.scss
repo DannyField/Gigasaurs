@@ -20,138 +20,18 @@
 //     grid-template-columns: 1fr 1fr; */
 //   }
   
-//   /* child */
-//   .box-email {
+.form-band {
+    display: flex;
+    border: 5px solid #ee3e80;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 45px black;
+}
 
-//     transform: translate(10%, 10%);
-//     width: 600px;
-//     height: 600px;
-//     margin: auto 0;
-//     pointer-events: auto;
-//   }
-  
-//   .layer-email p {
-//     margin: 0;
-//     padding: 0;
-//     /* text-align: justify; */
-//     color: #f4e3f6;
-//   }
-  
-//   .box-email .layer-email {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     /* width: 100%; */
-//     /* height: 100%; */
-//     border: 1px solid #f4e3f6;
-//     /* padding: 20px; */
-//     /* box-sizing: border-box; */
-//     transition: 0.8s;
-//     background: #202244;
-//     z-index: 3;
-//     overflow: hidden;
-//     padding: 5px;
-//   }
-  
-//   .box-email:hover .layer-email {
-//     top: -10px;
-//     left: 10px;
-//     box-shadow: 0 5px 20px rgba(0, 0, 0, 1);
-//     background: #3b96ca;
-//   }
-  
-//   .box-email .layer-email:before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: -110%;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(255, 255, 255, 0.1);
-//     pointer-events: none;
-//     transition: 0.9s;
-//     transform: skewX(-5deg);
-//   }
-  
-//   .box-email:hover .layer-email:before {
-//     left: -50%;
-//   }
-  
-//   .box-email .layer-email2 {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     border: 1px solid black;
-//     z-index: 2;
-//     box-sizing: border-box;
-//     transition: 1s;
-//     background: #262626;
-//     z-index: 2;
-//   }
-  
-//   .box-email:hover .layer-email2 {
-//     top: 0px;
-//     left: 0px;
-//     box-shadow: 0 5px 20px rgba(0, 0, 0, 1);
-//   }
-  
-//   .box-email .layer-email3 {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     border: 1px solid black;
-//     z-index: 2;
-//     box-sizing: border-box;
-//     transition: 0.4s;
-//     background: #262626;
-//     z-index: 1;
-//     box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
-//   }
-  
-//   .box-email:hover .layer-email3 {
-//     top: 10px;
-//     left: -10px;
-//   }
-  
-//   /* Style inputs with type="text", select elements and textareas */
-//   input[type="text"],
-//   select,
-//   textarea {
-//     width: 100%; /* Full width */
-//     padding: 16px; /* Some padding */
-//     border: 1px solid black;
-//     border-radius: 4px;
-//     box-sizing: border-box; /* Make sure that padding and width stays in place */
-//     margin-top: 6px; /* Add a top margin */
-//     margin-bottom: 16px; /* Bottom margin */
-//     resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-//   }
-  
-//   /* Style the submit button with a specific background color etc */
-//   input[type="submit"] {
-//     background-color: #8b4162;
-//     color: white;
-//     padding: 12px 20px;
-//     border: 1px solid black;
-//     border-radius: 4px;
-//     cursor: pointer;
-//   }
-  
-//   /* hover over mouse will change slight color */
-//   input[type="submit"]:hover {
-//     background-color: #5d2740;
-//   }
-  
-//   .form {
-//     /* grid-row: 1 / 2;
-//     grid-column: 1 / 2; */
-//     flex-direction: column;
-//     padding: 100px;
-//     color: black;
-  
-//     /* background-color: brown; */
-//   }
+.form-band form label {
+    font-size: 1rem;
+}
+
+.form-info {
+    font-size: 5;
+}

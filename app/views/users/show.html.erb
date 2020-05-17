@@ -30,16 +30,14 @@ to show their own profile or others if they click on it
 
 <p>_____________________________________________________</p>
 
-<% if can? :edit, @user  %>
+<div class="show-edit-delete">
+<% if current_user.id == @user.id %>
 <%= link_to 'Edit', edit_user_path(@user) %>
-<% end %>
-
-<% if can? :destroy, @user  %>
 <%= link_to 'Delete', band_path(@user), method: :delete, data: { confirm: "Really delete #{@user.name}?"} %>
 <% end %>
 
 <%= link_to 'Back', gigs_path %>
-
+</div>
 deleting a user may also delete the band page... or maybe not
 
 
