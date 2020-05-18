@@ -9,35 +9,42 @@
 <h3>Held at : <%= @gig.venue %></h3>
 <h3>Description :</h3>
 <p><%= @gig.gig_details %></p>
-<h2>Price: <%= number_to_currency(@gig.cost / 100.0) %></h2>
+<h2>Price: <%= number_to_currency(@gig.cost / 100.0) %> </h2>
 
 <%# add the other details here too %>
 
 <p>Posted By : <%= @gig.band.name %>
+<p>Posted By : <%= @gig.band.user[:name] %>
 
+<br><br>
 BUY TICKETS 
 Amount - at the moment it's set to tickets, so I need to maybe create a cart and take away tickets
-<br><br>
+
+
+<div class="gig-ticket">
 <%= form_with model: @gig, local: true do |form| %>
 <div>
-    <%= form.label 'HOW MANY TICKETS' %>
+    <%= form.label 'HOW MANY TICKETS DO YOU WANT TO BUY' %>
     <%= form.text_field :ticket_available %>
     <div>
 <%= form.submit %>
 </div>
 <% end %>
 </div>
+</div>
 
-Add to cart
+<br><br>
 
-<% if current_user && current_user.id == @band.user_id %>
+<div class="gigedit">
+<%# <% if current_user && current_user.id == @band.user_id %>
         <%= link_to 'Edit', edit_gig_path(@gig.id) %>    
         <%= link_to 'Delete', gig_path(@gig.id), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
-    <% end %>
+    <%# <% end %>
     <% if current_user %>
     <p> Will you like to buy tickets? </p>
 <% end %>
 
+<br><br>
 <%= link_to 'Back', gigs_path %>
 
 </div>
