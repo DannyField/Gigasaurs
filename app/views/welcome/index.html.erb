@@ -1,3 +1,7 @@
+<% if flash[:unauthorized] %>
+<p><%= flash[:unauthorized]  %></p>
+<% end %>
+
 <%= render 'shared/navbar' %>
 
 <%# <%= class="bg" ; image_tag "bg", alt: "background-page" %>
@@ -5,29 +9,23 @@
 <br><br>
 
 <h1>NOT THE FINAL LOOK</h1>
-
-
 <h1>Welcome to Gigasaurs</h1>
 <p>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</p>
 
-<p>Please sign in and get access to the hottest bands in the local area</p>
 
-
+What to make this a whole side section 
 <div class="sign-up-button">
 <%= button_to "Sign up", new_user_registration_path, method: :get  %>
 </div>
 
-<br><br><br>
-<%# anyone should be able to see a listing but limited information %>
-<%= link_to 'Click Here to Enter and latest local gigs', gigs_path %>
+<br>
+  <% if current_user.try(:admin?) %>
+    <div>
+    <%= link_to "ADMIN CONTROL PANNEL", "/admin" %>
+    </div>
+  <% end %>
 
-<br><br><br>
-<%# should send you to the sign in page %>
-
-<%= link_to 'Click Here to Enter see the latest bands signed up|', bands_path %>
-
-<br><br><br>
-<%= link_to 'Click Here to Enter see the Users signed up|', users_path %>
+  
 
 <%# <% if user_signed_in? %> 
     <%# <%= link_to "Sign out          |", destroy_user_session_path, method: :delete  %>
@@ -42,7 +40,6 @@
 <%# <% end  %>
 
 <br><br><br><br>
-<br><br><br><br>
 
 
 Users go in and buy tickets
@@ -54,9 +51,6 @@ TODO
 
 Nav bar at the top so you can always link back
 
-<Footer>
-information here. Possibly user info as well, links back to home page, and direct messages etc
-</Footer>
 
 
 </div>

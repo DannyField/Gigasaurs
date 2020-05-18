@@ -1,0 +1,6 @@
+<% if band.profile_picture.attached? %>
+    <div style=" <%= background_image(band) %>">
+    </div>
+<% else %>
+<div class="backup-image"></div>
+<% end %>

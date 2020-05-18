@@ -1,32 +1,83 @@
-// .nav-container{
-    // height: 5rem;
-    // box-shadow: var(--shadow);
-    // padding: 0px;
-    // margin: 0px;
-// }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,300;1,500&display=swap');
 
-.nav-item ul {
-    display: grid;
-    grid-gap: 250px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+/* to change the font colors go to nav-effects.css */
+
+li, a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: seagreen;
+    font-size: 16px;
+    text-decoration: none;
 }
 
-// .nav-item a {
-//     background: var (--primary);
-//     display: block;
-//     text-decoration: none;
-//     padding: 0.8rem;
-//     text-align: center;
-//     color: var (--dark);
-//     text-transform: uppercase;
-//     font-size: 1.1rem;
-//     box-shadow: var(--shadow);
-// }
 
-.navbar {
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100vw;
+    height: 6rem;
+    background: linear-gradient(0deg, #090e17 0%, #0b0318 100%);
+}
+
+.logo {
+        cursor: pointer;
+    }
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 2-px;
+}
+
+.nav__links li a {
+    transition: all 0.3 ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #0088a9
+}
+
+.button {
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: rgba(0,136,169,0.6);
+}
+
+.button a {
+    color: black;
+    list-style: none;
+    text-decoration: none;
+}
+
+  .logo {
+    /* This helps center and align in middle of the box */
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  .nav__links a {  
+    text-decoration: none;
+  }
+  
+// Side bar element
+
+.sidebar {
     width: 5rem;
     height: 100vh;
     position: fixed;
@@ -34,7 +85,7 @@
     transition: 200ms ease;
 }
 
-.navbar-nav {
+.sidebar-nav {
     list-style: none;
     padding: 50px;
     margin: 5px;
@@ -71,10 +122,10 @@
 }
 
 // this will make the nav bar slide outwards
-.navbar:hover {
+.sidebar:hover {
     width: 16rem;
 }
 
-.navbar:hover .link-text {
+.sidebar:hover .link-text {
     display: block;
 }

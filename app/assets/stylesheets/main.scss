@@ -1,5 +1,12 @@
 @import "base/globals";
 @import "/shared/navbar";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,300;1,500&display=swap');
+@import "styles/bands";
+@import "styles/gigs";
+@import "styles/users";
+@import "styles/welcome";
+@import "styles/_form";
+
 
 *{
     margin: 0;
@@ -9,7 +16,8 @@
 
 :root {
     font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
     --primary: #dddddd;
     --dark: #333333;
     --light: #ffffff;
@@ -29,14 +37,16 @@ body {
 .notice {
     margin: 0;
     padding: 0;
-    display:none;
+    // display:none;
 }
 
 .alert {
     padding: 0;
     margin: 0;
-    display: none;
+    // display: none;
 }
+
+
 
 // This makes the side scroll bar nice and sexy. Makes it green too
 
