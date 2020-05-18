@@ -1,52 +1,19 @@
 @import "base/globals";
 @import "/shared/navbar";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,300;1,500&display=swap');
-@import "styles/bands";
-@import "styles/gigs";
-@import "styles/users";
+@import "styles/bands/bands";
+@import "styles/gigs/gigs";
+@import "styles/users/users";
 @import "styles/welcome";
 @import "styles/_form";
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    font-size: 16px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    --primary: #dddddd;
-    --dark: #333333;
-    --light: #ffffff;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
-    --shadow: 0 1px 5px rgba(104, 104, 104, 0.9);
-}
+@import "styles/users/form";
 
 body {
     color: black;
     background-color: var(--primary);
-    margin: 0;
-    padding: 0;
+    // margin: 0;
+    // padding: 0;
 }
-
-// This allows the full page as previously these notice and alert were sitting at the top
-.notice {
-    margin: 0;
-    padding: 0;
-    // display:none;
-}
-
-.alert {
-    padding: 0;
-    margin: 0;
-    // display: none;
-}
-
-
 
 // This makes the side scroll bar nice and sexy. Makes it green too
 

@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.user-index, .user-show, .user-new, .user-edit {
+.user-index, .user-new, .user-edit {
     // sets the main page across - will make it go down -so margin top
     margin-left: 16rem; 
-    padding: 1rem;
+    padding: 10rem;
 }
+
+

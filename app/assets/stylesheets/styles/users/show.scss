@@ -1,0 +1,45 @@
+.user-container {
+    // margin-left: 14rem;
+    // padding: 3%;
+    
+    border: 5px solid #ee3e80;
+    border-radius: 10px;
+    box-shadow: 5px 5px 45px black;
+    display: flex;
+    height: 100%;
+    // width: 600px;
+    // height: 600px;
+    // margin-left: 16rem;
+}
+
+.user-container > div {
+    // flex: 1;
+}
+
+
+.user-show {
+
+}
+
+
+.show-edit-delete{
+    
+}
+
+.upcoming-shows{ 
+}
+
+
+.wallpaper {
+    width: 600px;
+    height: 600px;
+    display: inline;
+}
+
+.wallpaper-pic {
+    display: inline;
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    opacity: 0.2;
+}

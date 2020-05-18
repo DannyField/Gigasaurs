@@ -12,22 +12,30 @@
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.9);
 }
 
+a {
+    text-decoration: none;
+}
+
+*{
+    // margin: 0;
+    // padding: 0;
+     box-sizing: border-box;
+}
+
+
 body {
     color: black;
-    background-color: var(--primary);
     margin: 0;
-    padding: 0;
+    // padding: 500;
 }
 
 // This allows the full page as previously these notice and alert were sitting at the top
 .notice {
     margin: 0;
     padding: 0;
-    display:none;
 }
 
 .alert {
     padding: 0;
     margin: 0;
-    display: none;
 }
