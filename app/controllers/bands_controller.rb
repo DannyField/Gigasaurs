@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
 before_action :find_band ,only: [:show, :edit, :update, :destroy]
 # load_and_authorize_resource
-before_action :authenticate_user!
+before_action :authenticate_user! ,only: [:new, :create, :edit, :update, :destroy]
 # before_action :set_band_gig, only: [:edit, :update, :destroy]
 # before_action :set_user_band, only: [:edit, :update, :destroy]
 
@@ -15,42 +15,37 @@ before_action :authenticate_user!
     end
 
     def new
-        authenticate_user!
         @band = Band.new
     end
 
-    def create
-        # authenticate_user!
-        @band = current_user.band.create(band_params)
-        if @band.errors.any?
-            render :new
-        else
-            flash[:success] = "You have created a new band"
-            redirect_to @band
+    def create 
+# But this is what is on the Canvas site for the snake app
+    #     @band = current_user.bands.create(band_params)
+
+    #     if @band.errors.any?
+    #         render "new"
+    #     else
+    #         redirect_to bands_path
+    #     end
+    # end
+
+        # Ed helped with this code. So I know it works
+        @band = Band.new(band_params)
+        @band.user = current_user
+        # can change to email if I want the creator to add the right person
+        band_member = User.where(name: params[:band][:band_member])
+
+        unless band_member.empty?
+            @band.band_users.create(user_id: band_member.first.id)
         end
-    end
-
         
-        
-        
-        # # Ed helped with this code. So I know it works
-        # @band = Band.new(band_params)
-
-        # band_member = User.where(name: params[:band][:band_member])
-
-        # unless band_member.empty?
-        #     @band.band_users.create(user_id: band_member.first.id)
-        # end
-        
-
-        # @band.save
-        # flash[:success] = "You have created a new band"
-        # redirect_to @band
-        # end
+        @band.save
+        flash[:success] = "You have created a new band"
+        redirect_to @band
+        end
 
     def edit
         # @band = Band.find(params[:id])
-        
     end
 
     def update
@@ -67,7 +62,6 @@ before_action :authenticate_user!
 
     def destroy
         @band.destroy
-
         redirect_to bands_path
     end
 
@@ -79,7 +73,7 @@ private
     end
 
     def band_params
-        params.require(:band).permit(:name, :profile_picture, :about, :website, :user_id)
+        params.require(:band).permit(:name, :profile_picture, :about, :website)
     end
 
     # def set_band_gig
