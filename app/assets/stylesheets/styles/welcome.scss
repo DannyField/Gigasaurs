@@ -1,48 +1,59 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// // Place all the styles related to the Welcome controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .container {
-    display: inline;
+    // display: inline;
+    display: flex;
+    flex-direction: column;
 }
 
-.dino-hero {
-    background-image: url("Dino.png");
-    height: 800px;
-    background-position: center;
-    background-repeat: no-repeat;
+// .dino-hero {
+//     // display: flex;
+//     background-image: url("Dino.png");
+//     height: 800px;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+
+.hero-image{
+    width: 100vw;
+    background-image: url("drumstick.png");
     background-size: cover;
-    padding: 50px;    
 }
 
-body {
-    // background-image: url("Dino.png");
-    color: var(--light);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    background: var(--dark);
-}
+
+// body {
+//     // background-image: url("Dino.png");
+//     color: var(--light);
+//     font-family: "Montserrat", sans-serif;
+//     font-weight: 500;
+//     background: var(--dark);
+// }
 
 .welcome {
     // sets the main page across - will make it go down -so margin top
-    margin-left: 16rem; 
-    padding: 1rem;
+    // margin-left: 16rem; 
+    // padding: 1rem;
+    width: 100vw;
+    background-color: #263d04;
 }
 
-.sign-up-button {
-    // display: flex;
-    // justify-content: center;
-}
+// .sign-up-button {
+//     // display: flex;
+//     // justify-content: center;
+// }
 
-.sign-up-button form input {
-    height: 50px;
-    width: 200px;
-    border: 1px solid green;
-    background-color: lightgreen;
-    font-size: 30px;
-    color: black;
-}
+// .sign-up-button form input {
+//     height: 50px;
+//     width: 200px;
+//     border: 1px solid green;
+//     background-color: lightgreen;
+//     font-size: 30px;
+//     color: black;
+// }
 
-.sign-up-button form input:hover {
-    background-color: cornflowerblue;
-}
+// .sign-up-button form input:hover {
+//     background-color: cornflowerblue;
+// }

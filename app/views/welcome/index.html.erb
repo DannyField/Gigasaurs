@@ -5,27 +5,20 @@
 <%= render 'shared/navbar' %>
 
 <div class="container">
-
-<div class="dino-hero">
-  <%# <%= image_tag "Dino.png", class: "dino-hero"  %>
-</div>
+  <div class="hero-image">
+  <%= image_tag "drumstick.png", class: "hero-image" %>
+  </div>
 
 <%# <%= class="bg" ; image_tag "bg", alt: "background-page" %>
-<div class="welcome"> 
-<br><br>
-
-<h1>GIGASAURS</h1>
-<h1>Welcome to Gigasaurs</h1>
-<p>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</p>
-
-
-What to make this a whole side section 
-
+  <div class="welcome"> 
+  <br><br>
+  <h1>GIGASAURS</h1>
+  <h1>Welcome to Gigasaurs</h1>
+  <p>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</p>
 
 <div class="sign-up-button">
-<%= button_to "Sign up", new_user_registration_path, method: :get  %>
+  <%= button_to "Sign up", new_user_registration_path, method: :get  %>
 </div>
-
 
 <br>
   <% if current_user.try(:admin?) %>
@@ -37,15 +30,4 @@ What to make this a whole side section
 <br><br><br><br>
 
 </div>
-Users go in and buy tickets
-
-Bands go in and sell tickets
-
-
-TODO
-
-Nav bar at the top so you can always link back
-
-
-
 </div>

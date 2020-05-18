@@ -1,9 +1,9 @@
-// Place all the styles related to the Bands controller here.
+// Place all the styles related to the Gigs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.band-index, .show-band, .band-new, .band-edit {
+.gig-index, .gig-edit, .gig-show, .gig-new {
     // sets the main page across - will make it go down -so margin top
-    margin-left: 16rem; 
-    padding: 5rem;
+    // margin-left: 16rem; 
+    // padding: 10rem;
 }

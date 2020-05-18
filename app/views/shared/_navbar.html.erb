@@ -1,57 +1,58 @@
 <div class="nav">
-        <ul><li class="logo"><%= link_to 'GIGASAURS', root_path  %></li></ul>
-            <ul class="nav__links">
-                <li><%= link_to 'GIGS', gigs_path  %></li> 
-                <li><%= link_to 'BANDS', bands_path  %></li> 
-                <li><%= link_to 'USERS', users_path  %></li> 
-                </ul>
-                <ul class="button"><li><% 
-                if user_signed_in? %>
+        <div class="logo"><%= link_to 'GIGASAURS', root_path  %></div>
+                <div class="nav__links"><%= link_to 'GIGS', gigs_path  %></div> 
+                <div class="nav__links"><%= link_to 'BANDS', bands_path  %></div> 
+                <div class="nav__links"><%= link_to 'USERS', users_path  %></div>
+            <div class="button"><% if user_signed_in? %>
                     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
                 <% else %>
                     <%= link_to "Sign in", new_user_session_path %>
-                <% end %></li>
-        <ul>
+                <% end %>
+            </div>
 </div>
 
-<div class="sidebar">
+
+
+<%# This is where you have to kill your babies. While I liked the side panel - it wasn't doing much and causing too much issues with the pages %>
+<%# <div class="sidebar">
     <div class="sidebar-nav">
-        <ul>
-            <li class="nav-item"
-                ><%= link_to 'GIGASAURS', root_path  %>
-                
-                <span class="link-text">GIGASAURS</span>
-                </li>
+            <div class="nav-item"
+                ><%= link_to 'Rock On!!', root_path  %>    
+                <%# <span class="link-text">GIGASAURS</span>
+            </div>
 
-                <li class="nav-item">
+                <div class="nav-item">
                 <% if user_signed_in? %>
-                <%= "Hello! #{current_user.name}"%><br> 
-                <%= "ID:#{current_user.id}" %>
-                <% end %> 
+                <%# <%= "#{current_user.name}"<br>  %>
+                <%# <%= "ID:#{current_user.id}" %> 
+     <%# <% end </div>  %>
 
-            <li class="nav-item">
-                <%= link_to 'GIGS', gigs_path  %>
-                <span class="link-text">GIGS</span>
-                </li>
+            <%# <div class="nav-item"> %>
+                <%# <%= link_to 'GIGS', gigs_path  %> 
+                <%# <span class="link-text">GIGS</span> %>
+                <%# </div> %> 
 
-            <li class="nav-item">
-                <%= link_to 'BANDS', bands_path  %> 
-                <span class="link-text">BANDS</span>
-                </li>
+            <%# <div class="nav-item"> %>
+                <%# <%= link_to 'BANDS', bands_path  %> 
+                <%# <span class="link-text">BANDS</span> %>
+                <%# </div> %>
 
-            <li class="nav-item">
-                <%= link_to 'USERS', users_path  %>
-                <span class="link-text">USERS</span>
-                </li>
+            <%# <div class="nav-item"> %>
+                <%# <%= link_to 'USERS', users_path  %> 
+                <%# <span class="link-text">USERS</span> %>
+                <%# </div> %>
+
+            <%# <div class="nav-item"> %>
+            <%# <% if user_signed_in? %> 
+                <%# <%= link_to "Sign out", destroy_user_session_path, method: :delete %> 
+            <%# <% else %> 
+                <%# <%= link_to "Sign in", new_user_session_path %> 
+            <%# <% end %> 
+            <%# <span class="link-text">LOGIN</span> %>
+            <%# <div> %>
+    <%# </div> %>
+<%# </div> %>
 
 
-            <li class="nav-item">
-            <% if user_signed_in? %>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            <% else %>
-                <%= link_to "Sign in", new_user_session_path %>
-            <% end %>
-            <span class="link-text">LOGIN</span><li>
-        </ul>
-    </div>
-</div>
+
+
