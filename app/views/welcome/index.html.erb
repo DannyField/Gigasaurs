@@ -8,15 +8,19 @@
 <div class="welcome"> 
 <br><br>
 
-<h1>NOT THE FINAL LOOK</h1>
+<h1>GIGASAURS</h1>
 <h1>Welcome to Gigasaurs</h1>
 <p>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</p>
 
 
 What to make this a whole side section 
+
+
+
 <div class="sign-up-button">
 <%= button_to "Sign up", new_user_registration_path, method: :get  %>
 </div>
+
 
 <br>
   <% if current_user.try(:admin?) %>
@@ -24,20 +28,6 @@ What to make this a whole side section
     <%= link_to "ADMIN CONTROL PANNEL", "/admin" %>
     </div>
   <% end %>
-
-  
-
-<%# <% if user_signed_in? %> 
-    <%# <%= link_to "Sign out          |", destroy_user_session_path, method: :delete  %>
-<%# <% else  %>
-    <%# <%= link_to 'Sign In          |', new_user_session_path %>
-<%# <% end %>
-
-<%# <% if user_signed_in? %>
-    <%# <%= link_to 'Create a new gig', new_gigs_path %>
-<%# <% else %>   
-    <%# <%= link_to 'Create a new gig', new_user_session_path %>
-<%# <% end  %>
 
 <br><br><br><br>
 

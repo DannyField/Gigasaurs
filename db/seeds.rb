@@ -9,17 +9,35 @@
 # require_relative "data/listings"
 # this was able to retrieve another seed file that had the listings of all the snakes
 
-puts "//////////////////////////////////////////////////"
-puts "Creating Bands"
 
 random_num = rand(1..11)
+
+puts "//////////////////////////////////////////////////"
+puts "Creating Admin"
+
+1.times do
+    u = User.create(
+        name: 'Admin',
+        profile_photo: nil,
+        about: 'The admin of the site',
+        location: 'Behind you!',
+        admin: true,
+        password: 'password',
+        email: 'admin@gigasaurs.com'
+        )
+        puts "The #{u.name} role was created. All hail the #{u.name}"
+    end
+    
+puts "//////////////////////////////////////////////////"
+puts "Creating Bands"
 
 11.times do
     b = Band.create(
         name: Faker::Music::RockBand.name,
         profile_picture: nil,
-        about: 'We are a kick ass band that has played over 27 shows, since starting out.',
-        website: nil
+        about: 'We are a kick ass band, playing many shows around the area.',
+        website: nil,
+        user_id: 1
     )
     puts "Band #{b.name} profile page was created! Now go create some gigs"
 end
@@ -63,21 +81,6 @@ puts "Creating Users"
 end
 
 
-puts "//////////////////////////////////////////////////"
-puts "Creating Admin"
-
-1.times do
-    u = User.create(
-        name: 'Admin',
-        profile_photo: nil,
-        about: 'The admin of the site',
-        location: 'Behind you!',
-        admin: true,
-        password: 'password',
-        email: 'admin@gigasaurs.com'
-    )
-    puts "The #{u.name} role was created. All hail the #{u.name}"
-end
 
 
 # USER
