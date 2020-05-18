@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.container {
+    display: inline;
+}
+
+.dino-hero {
+    background-image: url("Dino.png");
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;    
+}
+
 body {
-    // background-image: url('bg.png');
+    // background-image: url("Dino.png");
     color: var(--light);
     font-family: "Montserrat", sans-serif;
     font-weight: 500;

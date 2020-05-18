@@ -9,4 +9,7 @@ class Band < ApplicationRecord
     has_many :gigs
 
     has_one_attached :profile_picture
+
+    # this means that the user must enter these into the form
+    # validates :name, :about, presence: true
 end

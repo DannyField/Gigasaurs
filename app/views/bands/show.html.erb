@@ -8,22 +8,22 @@
 <div class="show-band">
 
 <h1>BAND LISTING</h1>
-
 <h1><%= @band.name %></h1>
+
+<div class="about-band">
 <h3>About us : <%= @band.about %></h3>
+</div>
+<div class="website-band">
 <h3>Check us out at :</h3>
 <p><%= @band.website %></p>
+</div>
 
 <%# <div class="show-image">
     <% render "image-logic", band: @band %>
 <%# </div> %>
 
 <p>_____________________________________________________</p>
-<p>Band members</p>
-trying to reach inside and grab the user entries
 
-So each user that is in the band. Would need a loop
-THIS IS WORKING
 <h3>BAND MEMBERS</h3>
 <% @band.users.each do |user| %>
 <p><%= user.name%></p>
@@ -54,10 +54,10 @@ THIS IS WORKING
 
 
 
-<%# <% if can? :edit, @band  %> %>
-<%# <%= link_to 'Edit', edit_band_path(@band.id) %> %>
-<%# <% end %> %>
-<%# <% if can? :destroy, @band  %> %>
+<%# <% if can? :edit, @band  %> 
+<%# <%= link_to 'Edit', edit_band_path(@band.id) %> 
+<%# <% end %> 
+<%# <% if can? :destroy, @band  %> 
 <%# <%= link_to 'Delete', band_path(@band.id), method: :delete, data: { confirm: "Really delete #{@band.name}?"} %> %>
-<%# <% end %> %>
-<%# <%= link_to 'Back', bands_path %> %>
+<%# <% end %> 
+<%# <%= link_to 'Back', bands_path %> 

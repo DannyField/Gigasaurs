@@ -27,7 +27,23 @@ puts "Creating Admin"
         )
         puts "The #{u.name} role was created. All hail the #{u.name}"
     end
+        
+puts "//////////////////////////////////////////////////"
+puts "Creating Users"
     
+    7.times do
+        u = User.create(
+            name: Faker::FunnyName.two_word_name,
+            profile_photo: nil,
+            about: 'A random number was used to create the email',
+            location: 'Melbourne',
+            password: '123456',
+            email: "test#{random_num}@gmail.com",
+            admin: false
+        )
+        puts "#{u.name} was created. Welcome #{u.name}"
+    end
+
 puts "//////////////////////////////////////////////////"
 puts "Creating Bands"
 
@@ -62,25 +78,6 @@ puts "Creating gigs"
     )
     puts "#{g.title} gig created and the support band is #{g.support}"
 end
-
-
-puts "//////////////////////////////////////////////////"
-puts "Creating Users"
-
-7.times do
-    u = User.create(
-        name: Faker::FunnyName.two_word_name,
-        profile_photo: nil,
-        about: 'A random number was used to create the email',
-        location: 'Melbourne',
-        password: '123456',
-        email: "test#{random_num}@gmail.com",
-        admin: false
-    )
-    puts "#{u.name} was created. Welcome #{u.name}"
-end
-
-
 
 
 # USER
