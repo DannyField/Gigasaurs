@@ -30,10 +30,10 @@ Amount - at the moment it's set to tickets, so I need to maybe create a cart and
 
 Add to cart
 
-<% if current_user && current_user.id == @band.user_id %>
+<%# <% if current_user && current_user.id == @band.user_id %> %>
         <%= link_to 'Edit', edit_gig_path(@gig.id) %>    
         <%= link_to 'Delete', gig_path(@gig.id), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
-    <% end %>
+    <%# <% end %> %>
     <% if current_user %>
     <p> Will you like to buy tickets? </p>
 <% end %>

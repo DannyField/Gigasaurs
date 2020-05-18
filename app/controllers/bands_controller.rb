@@ -19,18 +19,9 @@ before_action :authenticate_user! ,only: [:new, :create, :edit, :update, :destro
     end
 
     def create 
-# But this is what is on the Canvas site for the snake app
-    #     @band = current_user.bands.create(band_params)
-
-    #     if @band.errors.any?
-    #         render "new"
-    #     else
-    #         redirect_to bands_path
-    #     end
-    # end
-
         # Ed helped with this code. So I know it works
         @band = Band.new(band_params)
+        # My god, I needed this to save the current user. It doesn't overwrite, as its @band.user
         @band.user = current_user
         # can change to email if I want the creator to add the right person
         band_member = User.where(name: params[:band][:band_member])
@@ -64,7 +55,6 @@ before_action :authenticate_user! ,only: [:new, :create, :edit, :update, :destro
         @band.destroy
         redirect_to bands_path
     end
-
 
 private
 
