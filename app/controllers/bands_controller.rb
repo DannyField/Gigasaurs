@@ -2,12 +2,12 @@ class BandsController < ApplicationController
 before_action :find_band ,only: [:show, :edit, :update, :destroy]
 # load_and_authorize_resource
 before_action :authenticate_user! ,only: [:new, :create, :edit, :update, :destroy]
-# before_action :set_band_gig, only: [:edit, :update, :destroy]
-# before_action :set_user_band, only: [:edit, :update, :destroy]
+
 
     def index
         authenticate_user!
-        @bands = Band.all 
+        @bands = Band.all
+        # @bands = Band.search(params[:search]) 
     end
 
     def show
@@ -65,24 +65,5 @@ private
     def band_params
         params.require(:band).permit(:name, :profile_picture, :about, :website)
     end
-
-    # def set_band_gig
-    #     id = paramas[:id]
-    #     @gig = current.user.gigs.find_by_id(id)
-    #     if @gig == nil
-    #         redirect_to_gigs_path
-    #     end
-    # end
-
-# I need to get in my head, that a user would create a band, just like a listing!!! Just that a user doesn't sell a band
-    # def set_user_band
-    #     id = params[:id]
-    #     @band = current_user.bands.find_by_id(id)
-
-    #     if @band == nil
-    #         flash[:unauthorized] = "Not authorized to do that!"
-    #         redirect_to bands_path
-    #     end
-    # end
 
 end

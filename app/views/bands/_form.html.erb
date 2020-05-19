@@ -20,10 +20,6 @@
     <%= form.file_field :profile_picture, accept: 'image/png, image/jpeg, image/jpg' %>
 </div>
 
-<div class="form-info">
-<p>To remove. A user must create a band. That user must then add people to the band via email! </p>
-</div>
-
 <div>
     <%= form.label :band_member %>
     <%= form.text_field :band_member %>
@@ -34,7 +30,7 @@ Incase there are people with the same name! So an email would be the best way.
 Or a secret number created that shouldn't be shared with others. Like a membership number
 </div>
 
-<%# This work. It shows the users in the user table %>
+<%# This works. It shows the users in the user table %>
 <%# <%= form.collection_select(:user_id, User.all, :id, :name)  %>
 
 <%# <% form.text_field :id, value: params[:user_id], class: "form-control-hidden" %>
@@ -45,6 +41,3 @@ Or a secret number created that shouldn't be shared with others. Like a membersh
 <% end %>
 
 </div>
-USER CREATES BAND FIRST
-
-EDIT AND ADDS PEOPLE TO THE BAND  
