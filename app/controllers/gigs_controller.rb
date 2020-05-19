@@ -18,21 +18,10 @@ before_action :authenticate_user! ,only: [:show, :index, :new, :create, :edit, :
     def create
         
         @gig = Gig.new(gig_params)
-        
-        # @gig = Gig.new(gig_params)
-        # @gig.band_id = current_user[:user_id]
-        
-        # @gig.band_id = current_user.bands
-        # p @gig.errors.full_messages
 
         @gig.save
         flash[:success] = "You have created a new gig post! Rock on!"
         redirect_to @gig
-
-        # @gig = Gig.new(gig_params)
-        # @gig.save
-
-        # redirect_to @gig
     end
 
     def edit
