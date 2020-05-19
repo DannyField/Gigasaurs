@@ -20,7 +20,6 @@
 
 BUY TICKETS
 
-
 <br><br>
 
 <div class="gigedit">
@@ -29,7 +28,6 @@ BUY TICKETS
         <%= link_to 'Edit', edit_gig_path(@gig.id) %>    
         <%= link_to 'Delete', gig_path(@gig.id), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
     <% end %>
-
 
 <% if current_user %>
     <p> Will you like to buy tickets? </p>

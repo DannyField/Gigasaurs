@@ -2,19 +2,18 @@
 
 
 <div class="band-index">
-<h1>IDEALLY I MIGHT NOT SHOW THE BAND LIST ONLY THE GIG LIST</h1>
-
-
 <h1>BANDS</h1>
 
+<div class="search">
 Be good to have the full list and a search list here. 
 Should add later the local of the band, and the venues that they have played at
-
+</div>
 
 <% @bands.each do |band| %>
 <p><%= link_to band.name, band_path(band) %></p>
 <% end %>
 
-<h2>ADD A NEW BAND</h2>
+<%# A user should create a user first then a band %>
+<%# <h2>ADD A NEW BAND</h2>
 <%= link_to 'Add A Band', new_band_path  %>
 </div>
