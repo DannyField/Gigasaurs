@@ -7,8 +7,7 @@
 
 <h1> Create a new gig listing <h1>
 
-<%= render 'form' %>
-
+<%= render 'form', user_bands: @bands, gig: @gig %>
 <%= link_to 'Back', gigs_path %>
 
 <%# because it should go back to the band page that created it %>

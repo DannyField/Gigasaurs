@@ -1,6 +1,6 @@
 class Gig < ApplicationRecord
 belongs_to :band
-belongs_to :user
+# belongs_to :user
 
     # validates :title, presence: true
     # validates :venue, presence: true
