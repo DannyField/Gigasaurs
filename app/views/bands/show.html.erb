@@ -18,9 +18,11 @@
 <p><%= @band.website %></p>
 </div>
 
-<%# <div class="show-image">
-    <% render "image-logic", band: @band %>
-<%# </div> %>
+<div class="show-image">
+    <% if @band.profile_picture.attached? %>
+    <%= image_tag @band.profile_picture, class: "band-pic"  %>
+    <% end %>
+</div>
 
 <p>_____________________________________________________</p>
 

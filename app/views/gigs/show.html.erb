@@ -1,50 +1,64 @@
 <%= render 'shared/navbar' %>
 <%# this will print each single job listing %>
 
+<div class="gig-container">
+
 <div class="gig-show">
+    <h1>GIG LISTING</h1>
+    <h1><%= @gig.title %></h1>
+    <h3>Held at : <%= @gig.venue %></h3>
+    <h3>Description :</h3>
+    <p><%= @gig.gig_details %></p>
+    <h2>Price: <%= number_to_currency(@gig.cost / 100.0) %> </h2>
+</div>
 
-<h1>GIG LISTING</h1>
-
-<h1><%= @gig.title %></h1>
-<h3>Held at : <%= @gig.venue %></h3>
-<h3>Description :</h3>
-<p><%= @gig.gig_details %></p>
-<h2>Price: <%= number_to_currency(@gig.cost / 100.0) %> </h2>
-
-<%# add the other details here too %>
-
+<div class="gig-image">
+    <% if @gig.picture_upload.attached? %>
+    <%= image_tag @gig.picture_upload, class: "gig-poster"  %>
+    <% end %>
 <p>Posted By : <%= @gig.band.name %>
 <p>Posted By : <%= @gig.band.user[:name] %>
-
 <br><br>
+</div>
 
-BUY TICKETS
 
-<br><br>
+<%# <div class="buytix">
+    <%# <%= link_to "BUY TICKETS" %>
+<%# </div> %>
+<%# <br><br> %>
 
-<div class="gigedit">
-
-<% if current_user.band_ids.include? @gig.band_id %>
-        <%= link_to 'Edit', edit_gig_path(@gig.id) %>    
-        <%= link_to 'Delete', gig_path(@gig.id), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
+<div class="gig-edit">
+    <% if current_user.band_ids.include? @gig.band_id %>
+            <%= link_to 'Edit', edit_gig_path(@gig.id) %>    
+            <%= link_to 'Delete', gig_path(@gig.id), method: :delete, data: { confirm: "Really delete #{@gig.title}?"} %>
     <% end %>
+<div>
 
-<% if current_user %>
-    <p> Will you like to buy tickets? </p>
+<p>_______________________________________________________________<p>
+
 <div class="gig-ticket">
+<% if current_user %>
+    <h1> Would you like to buy tickets? </h1>
+<%# <%= link_to "Pay Now", "", id: "stripe" %>
+<% end %>
+
 <%= form_with model: @gig, local: true do |form| %>
 <div>
-    <%= form.label 'HOW MANY TICKETS DO YOU WANT TO BUY' %>
+    <%= form.label 'HOW MANY?' %>
     <%= form.text_field :ticket_available %>
     <div>
-<%= form.submit %>
+    <%= form.submit %>
 </div>
-<% end %>
+    <% end %>
 </div>
-</div>
-<% end %>
 
 <br><br>
 <%= link_to 'Back', gigs_path %>
 
 </div>
+
+
+
+<%# <div class="sign-up-button"> %>
+  <%# <%= button_to "Sign up", new_user_registration_path, method: :get  %>
+<%# </div> %>

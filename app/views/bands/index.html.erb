@@ -1,19 +1,12 @@
 <%= render 'shared/navbar' %>
 
+<div class="container">
+  <div class="hero-image">
+  <%= image_tag "bassfloor.png", class: "hero-image" %>
+  </div>
 
 <div class="band-index">
-<h1>BANDS</h1>
-
-<div class="search">
-
-<%# <%= render 'search'  %>
-
-Be good to have the full list and a search list here. 
-Should add later the local of the band, and the venues that they have played at
-</div>
-
-
-
+<h1>THE LATEST BANDS</h1>
 
 <% @bands.each do |band| %>
 <p><%= link_to band.name, band_path(band) %></p>

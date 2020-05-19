@@ -2,8 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.band-index, .show-band, .band-new, .band-edit {
+.band-index, .band-new, .band-edit {
     // sets the main page across - will make it go down -so margin top
-    margin-left: 16rem; 
-    padding: 15rem;
+    margin-left: 4rem; 
+    padding: 0 4rem;
+}
+
+.band-index{
+    // background-color: green;
+}
+
+
+.band-new {
+
+}
+
+
+.band-edit {
+
+
+}
+
+
+.show-band{
+    margin: 16rem;
+    padding: 0 4rem;
 }
