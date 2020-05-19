@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 before_action :find_user ,only: [:show, :edit, :update, :destroy]
-# load_and_authorize_resource    
 before_action :authenticate_user!
+# load_and_authorize_resource
 
     def index 
         @users = User.all
@@ -53,10 +53,6 @@ before_action :authenticate_user!
         def user_params
             params.require(:user).permit(:name, :profile_photo, :about, :location)
         end
-    
-        # def user_params
-        #     params.require(:user).permit(band_ids: [])
-        # end
 end
     
     

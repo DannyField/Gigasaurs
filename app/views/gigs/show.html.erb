@@ -16,16 +16,9 @@
     <% if @gig.picture_upload.attached? %>
     <%= image_tag @gig.picture_upload, class: "gig-poster"  %>
     <% end %>
-<p>Posted By : <%= @gig.band.name %>
-<p>Posted By : <%= @gig.band.user[:name] %>
-<br><br>
+    <p>Posted By : <%= @gig.band.name %>
+    <p>Posted By : <%= @gig.band.user[:name] %>
 </div>
-
-
-<%# <div class="buytix">
-    <%# <%= link_to "BUY TICKETS" %>
-<%# </div> %>
-<%# <br><br> %>
 
 <div class="gig-edit">
     <% if current_user.band_ids.include? @gig.band_id %>
@@ -56,8 +49,6 @@
 <%= link_to 'Back', gigs_path %>
 
 </div>
-
-
 
 <%# <div class="sign-up-button"> %>
   <%# <%= button_to "Sign up", new_user_registration_path, method: :get  %>

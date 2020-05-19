@@ -1,7 +1,7 @@
 class GigsController < ApplicationController
 before_action :find_gig ,only: [:show, :edit, :update, :destroy]
-# load_and_authorize_resource    
 before_action :authenticate_user! ,only: [:show, :index, :new, :create, :edit, :update, :destroy]
+# load_and_authorize_resource    
 
     def index  
         @gigs = Gig.all

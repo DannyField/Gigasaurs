@@ -10,7 +10,6 @@
   </div>
 <div>
 
-<%# <%= class="bg" ; image_tag "bg", alt: "background-page" %>
 <div class="welcome">
 
   <div class="dio-image">
@@ -20,21 +19,21 @@
   <div class="greeting">
   <br><br>
   <h1>GIGASAURS</h1>
-  <h1>Welcome to Gigasaurs</h1>
+  <h1><% if user_signed_in? %>
+        <%= "Welcome #{current_user.name}" %>
+      <% end %> <h1>
+
   <h1>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</h1>
 
   <div class="sign-up-button">
     <%= button_to "SIGN UP!", new_user_registration_path, method: :get  %>
   </div>
   </div>
-
 </div>
 
 <br>
   <% if current_user.try(:admin?) %>
-    <div>
-    <%= link_to "ADMIN CONTROL PANNEL", "/admin" %>
-    </div>
+    <%= link_to "ADMIN CONTROL PANEL", "/admin" %>
   <% end %>
 
 </div>

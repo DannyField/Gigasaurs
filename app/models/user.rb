@@ -13,13 +13,13 @@ class User < ApplicationRecord
 
     # Not sure about this line, as I originally set it up as bands can create gigs only
 
-#   def admin?
-#     if self.email.ends_with('@gigasaurs.com')
-#       #admin@gigasaurs.com
-#       if self.email.split('@').first == 'admin'
-#         return true
-#       end
-#     end
-#     false
-#   end
+  #   def admin?
+  #     if self.email.ends_with('@gigasaurs.com')
+  #     #admin@gigasaurs.com
+  #     if self.email.split('@').first == 'admin'
+  #       return true
+  #     end
+  #   end
+  #   false
+  # end
 end
