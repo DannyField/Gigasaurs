@@ -4,31 +4,18 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-  #   user ||= User.new
-
-  #   alias_action :create, :read, :update, :destroy, to: :crud
-    
-  #   #A guest
-  # can :read, Gig
-
-  # if !user
-  #   user = User.new
-  # end
-  
-  # # A user
-  # if user.present?
-  #   can [:index, :show], Gig
-  #   can [:edit, :create, :update, :destroy], Gig, user_id: user_id
-  #   can [:show], Band
-  #   can [:edit, :create, :update, :destroy], Band, user: id
-  #   can [:show, :edit, :create, :update, :destroy], User, user: id
-  # end
-
-  #   # Admin
-  #   if user.admin
-  #     can :manage, :all
-  #     can :destroy, User
-  #   end
-
+    # alias_action :create, :read, :update, :destroy, to: :crud
+    # user ||= User.new
   end
-end
+    #I'm having weird issues with Cancancan. I've put things in place that stop non owned user from changing and deleting posts though
+      # can :read, Gig
+      # can [:index, :show, :new, :create], Band
+      # can [:edit, :update, :destroy], Band, user_id: user.id
+      # can [:index, :show, :new, :create], Gig
+      # can [:edit, :update, :destroy], Gig
+      # can [:index, :show, :new, :create], User
+      # can [:edit, :update, :destroy], User
+  #   end
+  # end
+
+# I don't like this gem. One moment, it's working, the next, it fails!

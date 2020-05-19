@@ -15,7 +15,7 @@ a {
     width: 100vw;
     height: 6rem;
     background: linear-gradient(0deg, #090e17 0%, #0b0318 100%);
-    position: fixed;
+    // position: fixed;
 }
 
 .logo a {
@@ -53,7 +53,7 @@ a {
 
 .button {
     padding: 9px 25px;
-    background-color: rgba(0,136,169,1);
+    background-color: #16a136;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -62,7 +62,7 @@ a {
 }
 
 .button:hover {
-    background-color: rgba(0,136,169,0.6);
+    background-color: #96a941;
 }
 
 .button a {
@@ -74,6 +74,7 @@ a {
     text-decoration: none;
   }
   
+
 // ////////////////////////////////////// SIDE PANEL ELEMENT/////////////////////////////////////////
 
 // .sidebar {

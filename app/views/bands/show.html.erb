@@ -18,9 +18,11 @@
 <p><%= @band.website %></p>
 </div>
 
-<%# <div class="show-image">
-    <% render "image-logic", band: @band %>
-<%# </div> %>
+<div class="show-image">
+    <% if @band.profile_picture.attached? %>
+    <%= image_tag @band.profile_picture, class: "band-pic"  %>
+    <% end %>
+</div>
 
 <p>_____________________________________________________</p>
 
@@ -38,17 +40,14 @@
 <div class="show-edit-delete">
 <% if current_user.id == @band.user_id %>
     <%= link_to 'Edit', edit_band_path(@band.id) %>
+    <%= link_to 'Add A Gig', new_gig_path %>
     <%= link_to 'Delete', band_path(@band.id), method: :delete, data: { confirm: "Really delete #{@band.name}?"} %>
-<% end %>
+    <% end %>
+</div>
+
+<br>
 <%= link_to 'Back', bands_path %>
 </div>
-
-<div class="add-gig">
-<h2>ADD A GIG</h2>
-<%= link_to 'Add A Gig', new_gig_path  %>
-</div>
-
-<%# if signed in can create a gig %>
 
 </div>
 
