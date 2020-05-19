@@ -10,4 +10,5 @@ class Band < ApplicationRecord
 
     # this means that the user must enter these into the form
     # validates :name, :about, presence: true
+
 end
