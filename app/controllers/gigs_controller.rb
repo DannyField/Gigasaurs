@@ -16,23 +16,12 @@ before_action :authenticate_user! ,only: [:show, :index, :new, :create, :edit, :
     end
 
     def create
-   
-        # orig
+        
         @gig = Gig.new(gig_params)
-        
-        # @gig = Gig.new(gig_params)
-        # @gig.band_id = current_user[:user_id]
-        
-        @gig.band_id = current_user.id
 
         @gig.save
         flash[:success] = "You have created a new gig post! Rock on!"
         redirect_to @gig
-
-        # @gig = Gig.new(gig_params)
-        # @gig.save
-
-        # redirect_to @gig
     end
 
     def edit
@@ -59,7 +48,7 @@ before_action :authenticate_user! ,only: [:show, :index, :new, :create, :edit, :
     end
 
     def gig_params
-        params.require(:gig).permit(:title, :venue, :location, :date, :start_time, :end_time, :gig_details, :support, :tickets_available, :cost, :picture_upload)
+        params.require(:gig).permit(:title, :venue, :location, :date, :start_time, :end_time, :gig_details, :support, :tickets_available, :cost, :picture_upload, :band_id)
     end
 
 end
