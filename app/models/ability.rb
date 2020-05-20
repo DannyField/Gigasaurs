@@ -16,6 +16,6 @@ class Ability
       # can [:index, :show, :new, :create], User
       # can [:edit, :update, :destroy], User
   #   end
-  # end
+ end
 
 # I don't like this gem. One moment, it's working, the next, it fails!
