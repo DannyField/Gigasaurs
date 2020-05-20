@@ -11,7 +11,7 @@ class User < ApplicationRecord
     has_many :band_users
     has_many :bands, through: :band_users
 
-    # Not sure about this line, as I originally set it up as bands can create gigs only
+  # Not sure about this line, as I originally set it up as bands can create gigs only
 
   #   def admin?
   #     if self.email.ends_with('@gigasaurs.com')
