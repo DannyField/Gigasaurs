@@ -10,6 +10,7 @@
     <h3>Held at : <%= @gig.venue %></h3>
     <h3>Description :</h3>
     <p><%= @gig.gig_details %></p>
+    <%# This divides the number by 100 to give dollars %>
     <h2>Price: <%= number_to_currency(@gig.cost / 100.0) %> </h2>
 </div>
 
@@ -42,10 +43,10 @@
 <%# Currently this is incorrect as it's showing :tickets_available. I need to change to add to a cart/orders %>
 <%= form_with model: @gig, local: true do |form| %>
 <div>
-    <%= form.label 'HOW MANY?' %>
+    <%= form.label 'HOW MANY TICKETS?' %>
     <%= form.text_field :ticket_available %>
     <div>
-    <%= form.submit %>
+    <%= form.submit name="BUY TICKETS" %>
 </div>
     <% end %>
 </div>

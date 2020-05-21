@@ -1,16 +1,15 @@
 <%= render 'shared/navbar' %>
 
 <div class='gig-index'>
-
 <h1>ALL UPCOMING GIGS</h1>
 
 <div>
+<%# Loops with the .each and prints out each gig detail %>
 <% @gigs.each do |gig| %>
     <p><%= link_to gig.title, gig_path(gig) %> </p>
     <p>Held at the awesome <%= gig.venue %> </p>
     <p>With support by : <%= gig.support %> </p>
     <p>Date : <%= gig.date %> </p>
-
     <p>________________________________________________</p>
 <% end %>
 </div>

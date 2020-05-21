@@ -1,4 +1,4 @@
-
+<%# This helper checks if any errors occur during the saving of gigs %>
 <% if @gig.errors.any? %>
 <div id="error_explanation">
 <h2>
@@ -64,18 +64,20 @@ this article from being saved:
     <%= form.number_field :tickets_available %>
 </div>
 
+<%# Allows a user to upload images to aws %>
 <div>
     <%= form.label 'UPLOAD GIG POSTER' %>
     <%= form.file_field :picture_upload, accept: 'image/png, image/gif, image/jpeg, image/jpg' %>
 </div>
 
+<%# Grabs the entries from the user bands, their name and id %>
 <div>
     <% form.label 'SELECT YOUR BAND' %>
     <%= form.collection_select(:band_id, current_user.bands, :id, :name)  %>
 </div>
 
 <div>
-<%= form.submit %>
+<%= form.submit name="Create Gig" %>
 </div>
 
 <% end %>
