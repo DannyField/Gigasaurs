@@ -1,16 +1,14 @@
+<%# Renders out the partial _form %>
 <%= render 'shared/navbar' %>
-
-<div class="user-edit">
-Can edit your profile 
-
-Should only be able to edit their profile page
 
 <% if flash[:success] %>
 <p><%= flash[:success] %></p>
 <% end %>
 
+<div class="user-edit">
 <h1> Edit your profile page <h1>
 
+<%# Renders out the partial _form %>
 <%= render 'form' %>
 
 <%= link_to 'Back', user_path(@user) %>

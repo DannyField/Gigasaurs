@@ -2,8 +2,10 @@
 <p><%= flash[:unauthorized]  %></p>
 <% end %>
 
+<%# Renders the nav bar from the shared folder - know as a partial %>
 <%= render 'shared/navbar' %>
 
+<%# Div container contains the page, while hero-image is the main image %>
 <div class="container">
   <div class="hero-image">
     <%= image_tag "drumstick.png", class: "hero-image" %>
@@ -11,26 +13,28 @@
 <div>
 
 <div class="welcome">
-
   <div class="dio-image">
     <%= image_tag "Dio.png", class: "dio-image" %>
   </div>
-
+  <%# Greeting message and asking the user to log in or sign up  %>
   <div class="greeting">
   <br><br>
   <h1>GIGASAURS</h1>
+  <%# This checks whether the user is signed in and if so, will display their name %>
   <h1><% if user_signed_in? %>
         <%= "Welcome #{current_user.name}" %>
       <% end %> <h1>
 
   <h1>Your new site for local bands to sell their gig tickets and merch in the Melbourne area</h1>
 
+<%# The helper here (button_to) sends the non registered user to the devise new reg path. %>
   <div class="sign-up-button">
     <%= button_to "SIGN UP!", new_user_registration_path, method: :get  %>
   </div>
   </div>
 </div>
 
+<%# Secret admin control panel. If the user is an admin (via the Admin boolean = true), then this will display %>
 <br>
   <% if current_user.try(:admin?) %>
     <%= link_to "ADMIN CONTROL PANEL", "/admin" %>
@@ -39,6 +43,7 @@
 </div>
 </div>
 
+<%# This was originally going to be a footer and contain useful information. %>
 <%# <div class="footer">
 <p>powered by GitHub | Stripe | Ruby On Rails.<p>
 </div> %>

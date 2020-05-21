@@ -1,8 +1,9 @@
 <%= render 'shared/navbar' %>
-<%# this will print each single job listing %>
+<%# this will print each single gig listing %>
 
 <div class="gig-container">
 
+<%# Show the gig information and grabs the information via the controller %>
 <div class="gig-show">
     <h1>GIG LISTING</h1>
     <h1><%= @gig.title %></h1>
@@ -12,6 +13,7 @@
     <h2>Price: <%= number_to_currency(@gig.cost / 100.0) %> </h2>
 </div>
 
+<%# displays the images that a user can upload %>
 <div class="gig-image">
     <% if @gig.picture_upload.attached? %>
     <%= image_tag @gig.picture_upload, class: "gig-poster"  %>
@@ -20,6 +22,7 @@
     <p>Posted By : <%= @gig.band.user[:name] %>
 </div>
 
+<%# allows the owner of the gig to edit or delete. The current_user band_ids checks that the @gig band_id is the same %>
 <div class="gig-edit">
     <% if current_user.band_ids.include? @gig.band_id %>
             <%= link_to 'Edit', edit_gig_path(@gig.id) %>    
@@ -29,12 +32,14 @@
 
 <p>_______________________________________________________________<p>
 
+<%# This sets up the stripe payment system: currently not set up yet %>
 <div class="gig-ticket">
 <% if current_user %>
     <h1> Would you like to buy tickets? </h1>
 <%# <%= link_to "Pay Now", "", id: "stripe" %>
 <% end %>
 
+<%# Currently this is incorrect as it's showing :tickets_available. I need to change to add to a cart/orders %>
 <%= form_with model: @gig, local: true do |form| %>
 <div>
     <%= form.label 'HOW MANY?' %>
@@ -47,9 +52,4 @@
 
 <br><br>
 <%= link_to 'Back', gigs_path %>
-
 </div>
-
-<%# <div class="sign-up-button"> %>
-  <%# <%= button_to "Sign up", new_user_registration_path, method: :get  %>
-<%# </div> %>
