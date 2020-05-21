@@ -8,6 +8,7 @@ class Ability
     # user ||= User.new
   end
     #I'm having weird issues with Cancancan. I've put things in place that stop non owned user from changing and deleting posts though
+      
       # can :read, Gig
       # can [:index, :show, :new, :create], Band
       # can [:edit, :update, :destroy], Band, user_id: user.id
@@ -16,6 +17,4 @@ class Ability
       # can [:index, :show, :new, :create], User
       # can [:edit, :update, :destroy], User
   #   end
- end
-
-# I don't like this gem. One moment, it's working, the next, it fails!
+end

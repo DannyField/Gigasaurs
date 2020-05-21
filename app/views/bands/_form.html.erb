@@ -15,26 +15,27 @@
     <%= form.text_field :website %>
 </div>
 
+<%# Allows a user to upload images to aws %>
 <div>
     <%= form.label 'UPLOAD BAND IMAGE :' %>
     <%= form.file_field :profile_picture, accept: 'image/png, image/jpeg, image/jpg' %>
 </div>
 
-<div>
-    <%= form.label :band_member %>
-    <%= form.text_field :band_member %>
-</div>
+<%# This form was moved to the edit page, as errors were created when trying to add someone during the band creation stage %>
+<%# <div> %>
+    <%# <%= form.label :band_member %>
+    <%# <%= form.text_field :band_member %>
+<%# </div> %>
 
 <div class="form-info">
 </div>
 
 <%# This works. It shows the users in the user table %>
 <%# <%= form.collection_select(:user_id, User.all, :id, :name)  %>
-
 <%# <% form.text_field :id, value: params[:user_id], class: "form-control-hidden" %>
 
 <div>
-<%= form.submit %>
+<%= form.submit name="Create Band"%>
 </div>
 <% end %>
 

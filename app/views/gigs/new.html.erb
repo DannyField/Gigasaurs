@@ -4,9 +4,9 @@
 <% end %>
 
 <div class="gig-new">
-
 <h1> Create a new gig listing <h1>
 
+<%# Renders the partial form for creating a new gig %>
 <%= render 'form', user_bands: @bands, gig: @gig %>
 <%= link_to 'Back', gigs_path %>
 

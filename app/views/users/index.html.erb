@@ -1,13 +1,13 @@
 <%= render 'shared/navbar' %>
 
 <div class="user-index">
-
+<%# Ideally for a massive user list, I would hide this to stop stalking users %>
 <h1>THE USERS</h1>
 
+<%# This runs through each user and uses a helper to displays the link to their page %>
 <% @users.each do |user| %>
     <p><%= link_to user.name, user_path(user) %></p>
     <% end %>
-
 </div>
 
 

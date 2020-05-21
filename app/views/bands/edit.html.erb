@@ -1,14 +1,27 @@
 <%= render 'shared/navbar' %>
 
-<div class="band-edit">
-
 <% if flash[:success] %>
 <p><%= flash[:success] %></p>
 <% end %>
 
+<div class="band-edit">
 <h1> Edit your band page <h1>
 
+<%# Renders out the partial _form %>
 <%= render 'form' %>
+
+<%# This was added to the edit page as once the band is created then the user can add band members to the band %>
+<div class="form-band">
+<%= form_with model: @band, local: true do |form| %>
+<div>
+    <%= form.label :band_member %>
+    <%= form.text_field :band_member %>
+</div>
+<div>
+<%= form.submit name="Add Band Members" %>
+</div>
+<% end %>
+
 
 <%= link_to 'Back', band_path(@band) %>
 

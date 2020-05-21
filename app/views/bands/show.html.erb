@@ -3,13 +3,13 @@
 <% end %>
 
 <%= render 'shared/navbar' %>
-<%# this will print each single job listing %>
 
+<%# this will print out the single band %>
 <div class="show-band">
-
 <h1>BAND LISTING</h1>
 <h1><%= @band.name %></h1>
 
+<%# Grabs the information about and website which are entires in the database %>
 <div class="about-band">
 <h3>About us : <%= @band.about %></h3>
 </div>
@@ -18,6 +18,7 @@
 <p><%= @band.website %></p>
 </div>
 
+<%# If an image has been uploaded by the user, will display that. Implementing eager loading  %>
 <div class="show-image">
     <% if @band.profile_picture.attached? %>
     <%= image_tag @band.profile_picture, class: "band-pic"  %>
@@ -25,18 +26,14 @@
 </div>
 
 <p>_____________________________________________________</p>
-
+<%# This grabs the users assigned to the band. %>
 <h3>BAND MEMBERS</h3>
 <% @band.users.each do |user| %>
 <p><%= user.name%></p>
 <% end %>
 <p>_____________________________________________________</p>
 
-
-<%# add the other details here too %>
-
-<%# <p>Posted By :<%= @gig.band_id %> 
-
+<%# This appears only for the user who's part of the band. The current_user id is matched with the band.user_id %>
 <div class="show-edit-delete">
 <% if current_user.id == @band.user_id %>
     <%= link_to 'Edit', edit_band_path(@band.id) %>
@@ -57,6 +54,6 @@
 <%# <%= link_to 'Edit', edit_band_path(@band.id) %> 
 <%# <% end %> 
 <%# <% if can? :destroy, @band  %> 
-<%# <%= link_to 'Delete', band_path(@band.id), method: :delete, data: { confirm: "Really delete #{@band.name}?"} %> %>
+<%# <%= link_to 'Delete', band_path(@band.id), method: :delete, data: { confirm: "Really delete #{@band.name}?"} %>
 <%# <% end %> 
 <%# <%= link_to 'Back', bands_path %> 

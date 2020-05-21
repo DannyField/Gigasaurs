@@ -1,14 +1,16 @@
+<%# Renders the nav bar from the shared folder - know as a partial %>
 <%= render 'shared/navbar' %>
-
 
 <div class="user-container">
 
+<%# A helper checks whether a user has a profile photo attached %>
     <div class="wallpaper">
     <% if @user.profile_photo.attached? %>
     <%= image_tag @user.profile_photo, class: "wallpaper-pic"  %>
     <% end %>
     </div>
 
+<%# Works with the controller to display information from the database %>
     <div class="user-show">
     <h1>USER PROFILE PAGE</h1>
     <h1><%= @user.name %></h1>
@@ -25,33 +27,26 @@
     <p>_____________________________________________________</p>
     </div>
 
-<%# <br> %>
-<%# <h2>Nice Photo</h2><br> %>
-
-<%# <div class="image-cropper">
-<% if @user.profile_photo.attached? %>
-    <%# <%= image_tag @user.profile_photo, class: "profile-pic"  %> 
-<%# <% end %> 
-<%# </div>  %>
-
+<%# This div shows the authentication. If the current_user's id is the same as the user.id then display Edit and Delete %>
     <div class="show-edit-delete">
 <p>_____________________________________________________</p>
     <% if current_user.id == @user.id %>
     <%= link_to 'Edit', edit_user_path(@user) %>
     <%= link_to 'Delete', band_path(@user), method: :delete, data: { confirm: "Really delete #{@user.name}?"} %>
-    <% end %>
-    <%= link_to 'Back', gigs_path %>
-    ////////////////////////////////////////////////////////////
     <h2>ARE YOU IN A BAND?</h2>
+    <%# This should only be available to the owner of the page, otherwise anyone viewing can create bands on other peoples' accounts %>
     <%= link_to 'Create a band profile', new_band_path  %>
+    <% end %>
+    <br><br>
+    <%= link_to 'Back', gigs_path %>
     </div>
 
-
+<%# Need to implement gig and ticket purchases here. A cart would be needed for this to work %>
     <div class="upcoming-shows">
     <br><br>
     <h1> YOUR UPCOMING EVENTS!! </h1>
     <p>_____________________________________________________</p>
-    <h1>TICKETS YOU HAVE PURCHASED</h1>
+    <h1> TICKETS YOU HAVE PURCHASED </h1>
     </div>
 </div>
 </div>
