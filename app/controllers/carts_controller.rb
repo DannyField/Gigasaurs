@@ -1,10 +1,10 @@
 class CartsController < ApplicationController
 
     def index
-        if user_signed_in? && current_user.carts.last
-            @cart = current_user.carts.last.gigs
+        if user_signed_in? && current_user.cart
+            @cart = current_user.cart.gigs
             @gig_ids = @cart.map do |gig|
-                gig.in
+                gig.id
             end
         else
             redirect_to gigs_path
