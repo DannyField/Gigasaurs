@@ -1,0 +1,17 @@
+<%# Renders the nav bar from the shared folder - know as a partial %>
+<%= render 'shared/navbar' %>
+
+<div class="user-container">
+
+<h1>Your Cart</h1>
+
+<ul>
+<% @cart.each do |gig| %>
+    <li><%= gig.title %> | <%= number_to_currency(gig.cost / 100.0) %></li>
+    <% end %>
+</ul>
+</div>
+
+<div class="cartpay">
+<h1>Pay Now</h1>
+</div>

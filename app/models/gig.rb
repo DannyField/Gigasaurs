@@ -15,6 +15,9 @@ class Gig < ApplicationRecord
   # A band might have a gig poster, so they can use Active Storage
   # and Active Record to upload gig posters
   has_one_attached :picture_upload
+
+  has_many :cart_gigs
+  has_many :carts, through: :cart_gigs
 end
 
 # Sure, someone could create a user account and then a band account and
