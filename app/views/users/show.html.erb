@@ -33,6 +33,7 @@
     <% if current_user.id == @user.id %>
     <%= link_to 'Edit', edit_user_path(@user) %>
     <%= link_to 'Delete', band_path(@user), method: :delete, data: { confirm: "Really delete #{@user.name}?"} %>
+    <%= link_to 'Cart', carts_path %>
     <h2>ARE YOU IN A BAND?</h2>
     <%# This should only be available to the owner of the page, otherwise anyone viewing can create bands on other peoples' accounts %>
     <%= link_to 'Create a band profile', new_band_path  %>

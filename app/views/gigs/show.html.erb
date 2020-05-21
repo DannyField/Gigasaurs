@@ -36,20 +36,9 @@
 <%# This sets up the stripe payment system: currently not set up yet %>
 <div class="gig-ticket">
 <% if current_user %>
-    <h1> Would you like to buy tickets? </h1>
-<%# <%= link_to "Pay Now", "", id: "stripe" %>
+    <h1> Would you like to a ticket to the show? </h1>
+<%= link_to "Add to cart", carts_path(gig_id: @gig.id), method: :post %>
 <% end %>
-
-<%# Currently this is incorrect as it's showing :tickets_available. I need to change to add to a cart/orders %>
-<%= form_with model: @gig, local: true do |form| %>
-<div>
-    <%= form.label 'HOW MANY TICKETS?' %>
-    <%= form.text_field :ticket_available %>
-    <div>
-    <%= form.submit name="BUY TICKETS" %>
-</div>
-    <% end %>
-</div>
 
 <br><br>
 <%= link_to 'Back', gigs_path %>

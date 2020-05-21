@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_105350) do
+ActiveRecord::Schema.define(version: 2020_05_21_060345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,23 @@ ActiveRecord::Schema.define(version: 2020_05_17_105350) do
     t.index ["user_id"], name: "index_bands_on_user_id"
   end
 
+  create_table "cart_gigs", force: :cascade do |t|
+    t.bigint "gig_id", null: false
+    t.bigint "cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_gigs_on_cart_id"
+    t.index ["gig_id"], name: "index_cart_gigs_on_gig_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.boolean "completed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
   create_table "gigs", force: :cascade do |t|
     t.string "title"
     t.string "venue"
@@ -95,5 +112,8 @@ ActiveRecord::Schema.define(version: 2020_05_17_105350) do
   add_foreign_key "band_users", "bands"
   add_foreign_key "band_users", "users"
   add_foreign_key "bands", "users"
+  add_foreign_key "cart_gigs", "carts"
+  add_foreign_key "cart_gigs", "gigs"
+  add_foreign_key "carts", "users"
   add_foreign_key "gigs", "bands"
 end

@@ -18,6 +18,9 @@ class User < ApplicationRecord
   has_many :band_users
   has_many :bands, through: :band_users
 
+  # A user only has one cart for the session
+  has_one :cart
+
   #   def admin?
   #     if self.email.ends_with('@gigasaurs.com')
   #     #admin@gigasaurs.com
