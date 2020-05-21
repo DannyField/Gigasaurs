@@ -18,7 +18,8 @@
 <p><%= @band.website %></p>
 </div>
 
-<%# If an image has been uploaded by the user, will display that. Implementing eager loading  %>
+<%# If an image has been uploaded by the user, will display that.%>
+<%# Implementing eager loading  %>
 <div class="show-image">
     <% if @band.profile_picture.attached? %>
     <%= image_tag @band.profile_picture, class: "band-pic"  %>
@@ -33,7 +34,8 @@
 <% end %>
 <p>_____________________________________________________</p>
 
-<%# This appears only for the user who's part of the band. The current_user id is matched with the band.user_id %>
+<%# This appears only for the user who's part of the band. %>
+<%# The current_user id is matched with the band.user_id %>
 <div class="show-edit-delete">
 <% if current_user.id == @band.user_id %>
     <%= link_to 'Edit', edit_band_path(@band.id) %>
@@ -45,10 +47,7 @@
 <br>
 <%= link_to 'Back', bands_path %>
 </div>
-
 </div>
-
-
 
 <%# <% if can? :edit, @band  %> 
 <%# <%= link_to 'Edit', edit_band_path(@band.id) %> 

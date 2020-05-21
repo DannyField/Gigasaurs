@@ -30,6 +30,7 @@
 
 
 .wallpaper {
+    margin-left: 2.5rem;
     width: 600px;
     height: 300px;
     display: inline;
@@ -40,7 +41,8 @@
     height: 300px;
     width: 300px;
     overflow: hidden;
-    opacity: 0.2;
+    // opacity: 0.2;
+    border-radius: 50%;
 }
 
 
