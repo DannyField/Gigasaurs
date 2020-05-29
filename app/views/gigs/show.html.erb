@@ -42,4 +42,9 @@
 
 <br><br>
 <%= link_to 'Back', gigs_path %>
+<% if current_user %>
+    <%= link_to "Pay for cart", "", id: "stripe" %>
+<% end %>
 </div>
+
+<%= javascript_pack_tag "stripe" %>

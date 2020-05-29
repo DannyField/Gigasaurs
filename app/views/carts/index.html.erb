@@ -13,5 +13,7 @@
 </div>
 
 <div class="cartpay">
-<h1>Pay Now</h1>
+<%= link_to "Pay for cart", "", id: "stripe" %>
 </div>
+
+<%= javascript_pack_tag "stripe" %>

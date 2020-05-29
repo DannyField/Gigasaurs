@@ -1,0 +1,9 @@
+<%= render 'shared/navbar' %>
+<%# this will print each single gig listing %>
+
+<h1>You've successfully made a payment! </h1>
+<p> You have purchased <%= @gig.title %> </p>
+
+<h3> You paid <%= number_to_currency(@gig.cost/ 100)  %></h3>
+
+<%= link_to "Go Back Gigs", gigs_path %>

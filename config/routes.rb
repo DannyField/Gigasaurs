@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:create, :index]
 
+  get "/payments/session", to: "payments#get_stripe_id"
+  get "/payments/success", to: "payments#success"
+
 end
