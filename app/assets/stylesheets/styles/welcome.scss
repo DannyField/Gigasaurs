@@ -2,7 +2,7 @@
 // // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.container {
+.image-container {
     // display: inline;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,7 @@
     width: 100vw;
     background-image: url("drumstick.png");
     background-size: cover;
+    // height: 250px;
 }
 
 
@@ -42,7 +43,7 @@
     width: 100vw;
     background-color: #263d04;
     padding: 0px 100px;
-    height: 600px;
+    // height: 600px;
     justify-content: flex-start;
 }
 
